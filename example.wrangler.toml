@@ -1,0 +1,9 @@
+name = "auto-reaction-bot"
+main = "src/index.js"
+compatibility_date = "2024-02-08"
+
+[vars]
+BOT_TOKEN = "12345678:PAST-YOUR-BOT-TOKEN-HERE"
+BOT_USERNAME = "Auto_ReactionBOT"
+EMOJI_LIST = "👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆"
+RESTRICTED_CHATS = "1234,5678"
