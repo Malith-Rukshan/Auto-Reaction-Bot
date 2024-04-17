@@ -66,8 +66,6 @@ First you must Add Repository secrets as follows
 
 After that [Click Here](https://github.com/Malith-Rukshan/Auto-Reaction-Bot/actions/workflows/deploy.yml) to Run Action.
 
-<details><summary>Github Action Preview</summary><img align="center" src="https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/github-actions.png"/></details>
-
 ## 🛠 Configuring Environments
 
 To ensure that your Telegram Auto-Reaction Bot operates correctly, you will need to configure several environment variables in your Cloudflare Worker settings:
