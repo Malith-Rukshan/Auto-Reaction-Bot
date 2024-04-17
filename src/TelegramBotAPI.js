@@ -50,6 +50,7 @@ export default class TelegramBotAPI {
             chat_id: chatId,
             text: text,
             parse_mode: "Markdown",
+            disable_web_page_preview:true,
             ...(inlineKeyboard && { reply_markup: { inline_keyboard: inlineKeyboard } })
         });
     }    
