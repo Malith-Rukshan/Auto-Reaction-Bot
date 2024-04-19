@@ -1,6 +1,6 @@
 /*!
  * © [2024] Malith-Rukshan. All rights reserved.
- * Repository: https://github.com/Malith-Rukshan/Multilingual-Inputs-Tool/
+ * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
  */
 
 import TelegramBotAPI from "./TelegramBotAPI.js";
