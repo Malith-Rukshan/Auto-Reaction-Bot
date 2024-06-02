@@ -61,7 +61,7 @@ async function onUpdate(data, botApi, Reactions, RestrictedChats, botUsername) {
             const reactions = Reactions.join(", ");
             await botApi.sendMessage(chatId, "✅ Enabled Reactions : \n\n" + reactions);
         } else {
-            if (!RestrictedChats.includes(chatId)) {
+            if (!RestrictedChats.includes(chatId) && data.message.is_bot == false) {
                 await botApi.setMessageReaction(chatId, message_id, getRandomPositiveReaction(Reactions));
             }
         }
