@@ -30,7 +30,7 @@ app.post('/', async (req, res) => {
         res.status(200).send('Ok');
     } catch (error) {
         console.error('Error in onUpdate:', error);
-        res.status(500).send('Internal Server Error');
+        res.status(200).send('Ok');
     }
 });
 
