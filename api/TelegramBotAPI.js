@@ -4,6 +4,8 @@
  *      - setMessageReaction
  * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
  */
+import fetch from 'node-fetch';
+
 export default class TelegramBotAPI {
     constructor(botToken) {
         this.apiUrl = `https://api.telegram.org/bot${botToken}/`;
