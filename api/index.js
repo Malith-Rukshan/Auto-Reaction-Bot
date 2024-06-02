@@ -22,7 +22,7 @@ const RestrictedChats = getChatIds(process.env.RESTRICTED_CHATS);
 
 const botApi = new TelegramBotAPI(botToken);
 
-app.post('/webhook', async (req, res) => {
+app.post('/', async (req, res) => {
     const data = req.body;
     try {
         await onUpdate(data, botApi, Reactions, RestrictedChats, botUsername);
