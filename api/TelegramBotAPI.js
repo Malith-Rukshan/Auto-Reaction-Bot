@@ -17,7 +17,9 @@ export default class TelegramBotAPI {
             },
             body: JSON.stringify(body)
         });
+        const data = await response.json();
         if (!response.ok) {
+            console.error(`Telegram API request failed: ${method}`, data);
             throw new Error('Telegram API request failed: ' + action);
         }
     }
