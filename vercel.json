@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/api/index.js"
+      }
+    ],
+    "env": {
+      "BOT_TOKEN": "The Telegram bot token (Generate from BotFather)",
+      "BOT_USERNAME": "The username you have set for your bot.",
+      "EMOJI_LIST": "A string of emojis that the bot will use to react to messages.",
+      "RESTRICTED_CHATS": "A list of chat IDs where the bot should not react to messages (Optional)"
+    }
+  }
+  
