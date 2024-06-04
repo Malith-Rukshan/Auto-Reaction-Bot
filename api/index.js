@@ -23,13 +23,12 @@ const RestrictedChats = getChatIds(process.env.RESTRICTED_CHATS);
 const botApi = new TelegramBotAPI(botToken);
 
 app.post('/', async (req, res) => {
-    console.log('Received POST request:', req.body); // Debugging line
     const data = req.body;
     try {
         await onUpdate(data, botApi, Reactions, RestrictedChats, botUsername);
         res.status(200).send('Ok');
     } catch (error) {
-        console.error('Error in onUpdate:', error);
+        console.info('Error in onUpdate:', error);
         res.status(200).send('Ok');
     }
 });
