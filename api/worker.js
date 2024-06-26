@@ -14,13 +14,14 @@ export default {
         const botUsername = env.BOT_USERNAME;
         const Reactions = splitEmojis(env.EMOJI_LIST);
         const RestrictedChats = getChatIds(env.RESTRICTED_CHATS);
+        const RandomLevel = parseInt(env.RANDOM_LEVEL || '0', 10);
 
         const botApi = new TelegramBotAPI(botToken);
 
         if (request.method === 'POST') {
             const data = await request.json()
             try {
-                await this.onUpdate(data, botApi, Reactions,RestrictedChats, botUsername)
+                await this.onUpdate(data, botApi, Reactions,RestrictedChats, botUsername, RandomLevel)
             } catch (error) {
                 console.log(error)
             }
@@ -37,7 +38,7 @@ export default {
      * Handle incoming Update
      * https://core.telegram.org/bots/api#update
      */
-    async onUpdate(data, botApi, Reactions,RestrictedChats, botUsername) {
+    async onUpdate(data, botApi, Reactions,RestrictedChats, botUsername, RandomLevel) {
         let chatId, message_id, text;
 
         if (data.message || data.channel_post) {
@@ -63,8 +64,19 @@ export default {
 				const reactions = Reactions.join(", ");
 				await botApi.sendMessage(chatId, "✅ Enabled Reactions : \n\n" + reactions);
 			} else {
-                if (!(RestrictedChats.includes(chatId))) {
-                    await botApi.setMessageReaction(chatId, message_id, getRandomPositiveReaction(Reactions));
+                // Calculate the threshold: higher RandomLevel, lower threshold
+                let threshold = 1 - (RandomLevel / 10);
+                if (!RestrictedChats.includes(chatId)) {
+                    // Check if chat is a group or supergroup to determine if reactions should be random
+                    if (["group", "supergroup"].includes(content.chat.type)) {
+                        // Run Function Randomly - Accroding to the RANDOM_LEVEL
+                        if (Math.random() <= threshold) {
+                            await botApi.setMessageReaction(chatId, message_id, getRandomPositiveReaction(Reactions));
+                        }
+                    } else {
+                        // For non-group chats, set the reaction directly
+                        await botApi.setMessageReaction(chatId, message_id, getRandomPositiveReaction(Reactions));
+                    }
                 }
             }
         }

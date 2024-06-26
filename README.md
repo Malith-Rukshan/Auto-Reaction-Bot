@@ -90,6 +90,7 @@ To ensure that your Telegram Auto-Reaction Bot operates correctly, you will need
 - `BOT_TOKEN`: This is your bot's token, which you can generate from [BotFather](https://t.me/BotFather). This token allows your bot to authenticate and interact with the Telegram API.
 - `BOT_USERNAME`: The username you have set for your bot. This is used within the script to identify messages intended for your bot.
 - `EMOJI_LIST`: A string of emojis that the bot will use to react to messages. You can customize this list to include any emojis you prefer, such as 👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆.
+- `RANDOM_LEVEL`: An integer that determines the randomness of reactions in **group chats**. Lower values result in more predictable reactions, while higher values increase randomness. Default is `0`, meaning reactions are consistent by default.
 - `RESTRICTED_CHATS`: A list of chat IDs where the bot should not react to messages (Optional). Split each chat ID by " , ". Example : `-1001233434,3434234`
 
 ## 🧩 Configure the Webhook

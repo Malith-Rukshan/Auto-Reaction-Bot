@@ -19,9 +19,11 @@ jobs:
             BOT_TOKEN
             BOT_USERNAME
             EMOJI_LIST
+            RANDOM_LEVEL
             RESTRICTED_CHATS
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           BOT_USERNAME: ${{ secrets.BOT_USERNAME }}
           EMOJI_LIST: ${{ secrets.EMOJI_LIST }}
+          RANDOM_LEVEL: ${{ secrets.RANDOM_LEVEL }}
           RESTRICTED_CHATS: ${{ secrets.RESTRICTED_CHATS }}

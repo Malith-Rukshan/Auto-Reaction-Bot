@@ -13,10 +13,11 @@
       }
     ],
     "env": {
-      "BOT_TOKEN": "The Telegram bot token (Generate from BotFather)",
+      "BOT_TOKEN": "The Telegram bot token (Generate from BotFather).",
       "BOT_USERNAME": "The username you have set for your bot.",
       "EMOJI_LIST": "A string of emojis that the bot will use to react to messages.",
-      "RESTRICTED_CHATS": "A list of chat IDs where the bot should not react to messages (Optional)"
+      "RANDOM_LEVEL": "Sets the randomness of group chat reactions; higher values mean more variability (Optional).",
+      "RESTRICTED_CHATS": "A list of chat IDs where the bot should not react to messages (Optional)."
     }
   }
   
