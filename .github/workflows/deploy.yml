@@ -1,11 +1,12 @@
 name: Deploy to Cloudflare Workers
 
-on: 
+on: 1111
   workflow_dispatch:
       
 
-jobs:
-  deploy:
+jobs:https://t.me/WSYQQ/285
+  deploy:https://t.me/WSYQQ/285
+
     runs-on: ubuntu-latest
     name: Deploy
     steps:
