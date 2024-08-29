@@ -44,7 +44,7 @@ export const htmlContent = `
 <button class="button githubBtn" onclick="window.location='https://github.com/Malith-Rukshan/Auto-Reaction-Bot'">Open Source 🌱</button>
 
 <div style="margin: 5px;">
-  <a class="github-button" href="https://github.com/Malith-Rukshan/Auto-Reaction-Bot" data-size="large" data-show-count="true">Star</a>
+  <a class="github-button" href="https://github.com/USDTQBOT/Auto-Reaction-Bot" data-size="large" data-show-count="true">Star</a>
   <a class="github-button" href="https://github.com/Malith-Rukshan/Auto-Reaction-Bot/fork" data-size="large" data-show-count="true">Fork</a>
 </div>
 <div>
