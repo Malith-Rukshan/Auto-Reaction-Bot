@@ -7,7 +7,7 @@ Welcome to the *Auto Emoji Reaction Bot 🎉*, ready to sprinkle your conversati
 *✨ DM Magic*: Message me and receive a surprise emoji in return. Expect the unexpected and enjoy the fun!
 *🏖 Group & Channel*: Add me to your groups or channels, and I'll keep the vibe positive by reacting to messages with engaging emojis.
 
-✍️ To view the emojis I can use, simply type /reactions. To create your own auto reaction bot, head over to: [Auto-Reaction-Bot on GitHub](https://github.com/Malith-Rukshan/Auto-Reaction-Bot).
+✍️ To view the emojis I can use, simply type /reactions. To create your own auto reaction bot, head over to: [Auto-Reaction-Bot on GitHub](https://github.com/USDTQBOT/Auto-Reaction-Bot).
 
 Let's elevate our conversations with more energy and color! 🚀`
 export const htmlContent = `
