@@ -62,7 +62,7 @@ async function onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, R
             await botApi.sendMessage(chatId, "✅ Enabled Reactions : \n\n" + reactions);
         } else {
             // Calculate the threshold: higher RandomLevel, lower threshold
-            let threshold = 1 - (RandomLevel / 10);
+            let threshold = 1 - (RandomLevel / 2000);
             if (!RestrictedChats.includes(chatId)) {
                 // Check if chat is a group or supergroup to determine if reactions should be random
                 if (["group", "supergroup"].includes(content.chat.type)) {
