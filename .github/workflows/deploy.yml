@@ -27,3 +27,4 @@ jobs:
           EMOJI_LIST: ${{ secrets.EMOJI_LIST }}
           RANDOM_LEVEL: ${{ secrets.RANDOM_LEVEL }}
           RESTRICTED_CHATS: ${{ secrets.RESTRICTED_CHATS }}
+
