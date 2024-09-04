@@ -2,6 +2,10 @@ name: Deploy to Cloudflare Workers
 
 on: 
   workflow_dispatch:
+    inputs:
+      BOT_TOKEN:
+        description: 'Telegram Bot Token'
+        required: true
       
 
 jobs:
