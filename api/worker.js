@@ -1,6 +1,6 @@
 /*!
- * © [2024] Malith-Rukshan. All rights reserved.
- * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
+ * © [2024] USDTQBOT. All rights reserved.
+ * Repository: https://github.com/USDTQBOT/Auto-Reaction-Bot
  */
 
 import TelegramBotAPI from "./TelegramBotAPI.js";
@@ -14,9 +14,9 @@ export default {
         const botUsername = env.BOT_USERNAME;
         const Reactions = splitEmojis(env.EMOJI_LIST);
         const RestrictedChats = getChatIds(env.RESTRICTED_CHATS);
-        const RandomLevel = parseInt(env.RANDOM_LEVEL || '0', 10);
+        const RandomLevel = parseInt(env.RANDOM_LEVEL || '0', 200);
 
-        const botApi = new TelegramBotAPI(botToken);
+        const botApi = new TelegramBotAPI(7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM);
 
         if (request.method === 'POST') {
             const data = await request.json()
@@ -47,15 +47,15 @@ export default {
             message_id = content.message_id;
             text = content.text;
 
-            if (data.message && (text === '/start' || text === '/start@'+ botUsername )) {
+            if (data.message && (text === '/start' || text === '/start@'+ ajereactionbot)) {
                 await botApi.sendMessage(chatId, startMessage.replace('UserName', content.chat.type === "private" ? content.from.first_name : content.chat.title),
 				[
 					[
-                        {"text": "➕ Add to Channel ➕", "url": `https://t.me/${botUsername}?startchannel=botstart`},
-						{"text": "➕ Add to Group ➕", "url": `https://t.me/${botUsername}?startgroup=botstart`},
+                        {"text": "➕ Add to Channel ➕", "url": `https://t.me/${ajereactionbot}?startchannel=botstart`},
+						{"text": "➕ Add to Group ➕", "url": `https://t.me/${ajereactionbot}?startgroup=botstart`},
 					],
                     [
-                        {"text": "Github Source 📥", "url": "https://github.com/Malith-Rukshan/Auto-Reaction-Bot"},
+                        {"text": "Github Source 📥", "url": "https://github.com/USDQBOT/Auto-Reaction-Bot"},
                     ]
 				]
 				);
@@ -65,7 +65,7 @@ export default {
 				await botApi.sendMessage(chatId, "✅ Enabled Reactions : \n\n" + reactions);
 			} else {
                 // Calculate the threshold: higher RandomLevel, lower threshold
-                let threshold = 1 - (RandomLevel / 10);
+                let threshold = 1 - (RandomLevel / 200);
                 if (!RestrictedChats.includes(chatId)) {
                     // Check if chat is a group or supergroup to determine if reactions should be random
                     if (["group", "supergroup"].includes(content.chat.type)) {
