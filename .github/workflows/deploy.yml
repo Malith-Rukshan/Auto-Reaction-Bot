@@ -17,7 +17,7 @@ on:
           type: string 
           default: '👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆'
       RESTRICTED_CHATS:
-        description: 'Restricted Chat IDs
+        description: 'Restricted Chat IDs'
         required: false
         type: string
 
