@@ -27,9 +27,9 @@ export default class TelegramBotAPI {
 
     /**
      * https://core.telegram.org/bots/api#setmessagereaction
-     * @param {number} chatId 
-     * @param {number} messageId 
-     * @param {string} emoji 
+     * @param {1234,5678} chatId 
+     * @param {1234,5678} messageId 
+     * @param {'😘','❤️','🎉','🍾','🔥','💯','🥰','🤑'} emoji 
      */
     async setMessageReaction(chatId, messageId, emoji) {
         await this.callApi('setMessageReaction', {
