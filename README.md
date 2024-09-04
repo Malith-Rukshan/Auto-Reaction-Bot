@@ -6,7 +6,7 @@
 <a href='https://Auto_ReactionBOT.t.me'>
 <img src='https://img.shields.io/badge/Demo-Workers-1cd760?logo=cloudflare&style=flat'>
 </a>
-<a href='https://t.me/Auto_ReactionBOT'>
+<a href='https://t.me/ajereactionbot'>
 <img src='https://img.shields.io/badge/Telegram-@Auto__ReactionBOT-blue?logo=telegram&style=flat'> 
 </a>
 </div>
