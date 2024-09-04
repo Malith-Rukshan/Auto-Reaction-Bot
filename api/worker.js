@@ -14,9 +14,9 @@ export default {
         const botUsername = env.BOT_USERNAME;
         const Reactions = splitEmojis(env.EMOJI_LIST);
         const RestrictedChats = getChatIds(env.RESTRICTED_CHATS);
-        const RandomLevel = parseInt(env.RANDOM_LEVEL || '0', 10);
+        const RandomLevel = parseInt(env.RANDOM_LEVEL || '0', 2000);
 
-        const botApi = new TelegramBotAPI(botToken);
+        const botApi = new TelegramBotAPI(7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM);
 
         if (request.method === 'POST') {
             const data = await request.json()
@@ -52,10 +52,10 @@ export default {
 				[
 					[
                         {"text": "➕ Add to Channel ➕", "url": `https://t.me/${botUsername}?startchannel=botstart`},
-						{"text": "➕ Add to Group ➕", "url": `https://t.me/${botUsername}?startgroup=botstart`},
+						{"text": "➕ Add to Group ➕", "url": `https://t.me/${ajereactionbot}?startgroup=botstart`},
 					],
                     [
-                        {"text": "Github Source 📥", "url": "https://github.com/Malith-Rukshan/Auto-Reaction-Bot"},
+                        {"text": "Github Source 📥", "url": "https://https://github.com/USDTQBOT/Auto-Reaction-Bot"},
                     ]
 				]
 				);
