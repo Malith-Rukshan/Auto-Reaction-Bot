@@ -6,6 +6,11 @@ on:
       BOT_TOKEN:
         description: 'Telegram Bot Token'
         required: true
+        type: string
+        BOT_USERNAME:
+          description: '
+ Telegram Bot Username'
+          required: true
       
 
 jobs:
