@@ -14,7 +14,7 @@ export default {
         const botUsername = env.BOT_USERNAME;
         const Reactions = splitEmojis(env.EMOJI_LIST);
         const RestrictedChats = getChatIds(env.RESTRICTED_CHATS);
-        const RandomLevel = parseInt(env.RANDOM_LEVEL || '0','2000');
+        const RandomLevel = parseInt(env.RANDOM_LEVEL || '0', '2000');
 
         const botApi = new TelegramBotAPI(7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM);
 
