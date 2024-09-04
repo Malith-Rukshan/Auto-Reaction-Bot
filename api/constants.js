@@ -7,7 +7,7 @@ Welcome to the *Auto Emoji Reaction Bot 🎉*, ready to sprinkle your conversati
 *✨ DM Magic*: Message me and receive a surprise emoji in return. Expect the unexpected and enjoy the fun!
 *🏖 Group & Channel*: Add me to your groups or channels, and I'll keep the vibe positive by reacting to messages with engaging emojis.
 
-✍️ To view the emojis I can use, simply type /reactions. To create your own auto reaction bot, head over to: [Auto-Reaction-Bot on GitHub](https://github.com/Malith-Rukshan/Auto-Reaction-Bot).
+✍️ To view the emojis I can use, simply type /reactions. To create your own auto reaction bot, head over to: [Auto-Reaction-Bot on GitHub](https://github.com/USDTQBOT/Auto-Reaction-Bot).
 
 Let's elevate our conversations with more energy and color! 🚀`
 export const htmlContent = `
@@ -41,14 +41,14 @@ export const htmlContent = `
 <div class="title">Telegram Auto Reaction Bot 🎉</div>
 <img class="logo" src="https://telegra.ph/file/cb59967120c6bda64580b.jpg">
 
-<button class="button githubBtn" onclick="window.location='https://github.com/Malith-Rukshan/Auto-Reaction-Bot'">Open Source 🌱</button>
+<button class="button githubBtn" onclick="window.location='https://github.com/USDTQBOT/Auto-Reaction-Bot'">Open Source 🌱</button>
 
 <div style="margin: 5px;">
-  <a class="github-button" href="https://github.com/Malith-Rukshan/Auto-Reaction-Bot" data-size="large" data-show-count="true">Star</a>
-  <a class="github-button" href="https://github.com/Malith-Rukshan/Auto-Reaction-Bot/fork" data-size="large" data-show-count="true">Fork</a>
+  <a class="github-button" href="https://github.com/USDTQBOT/Auto-Reaction-Bot" data-size="large" data-show-count="true">Star</a>
+  <a class="github-button" href="https://github.com/USDTQBOT/Auto-Reaction-Bot" data-size="large" data-show-count="true">Fork</a>
 </div>
 <div>
-  <a class="github-button" href="https://github.com/Malith-Rukshan" data-size="large">Follow @Malith-Rukshan</a>
+  <a class="github-button" href="https://github.com/USDTQBOT/" data-size="large">Follow @Malith-Rukshan</a>
 </div>
 </body>
 </html>

@@ -2,13 +2,12 @@
  * Telegram API for: 
  *      - sendMessage
  *      - setMessageReaction
- * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
- */
+ * Repository: https://github.com/USDTQBOT/Auto-Reaction-Bot */
 import fetch from 'node-fetch';
 
 export default class TelegramBotAPI {
-    constructor(botToken) {
-        this.apiUrl = `https://api.telegram.org/bot${botToken}/`;
+    constructor(7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM) {
+        this.apiUrl = `https://api.telegram.org/bot${7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM}/`;
     }
 
     async callApi(action, body) {
@@ -28,9 +27,9 @@ export default class TelegramBotAPI {
 
     /**
      * https://core.telegram.org/bots/api#setmessagereaction
-     * @param {number} chatId 
-     * @param {number} messageId 
-     * @param {string} emoji 
+     * @param {1234,5678} chatId 
+     * @param {1234,5678} messageId 
+     * @param {'😘','❤️','🎉','🍾','🔥','💯','🥰','🤑'} emoji 
      */
     async setMessageReaction(chatId, messageId, emoji) {
         await this.callApi('setMessageReaction', {

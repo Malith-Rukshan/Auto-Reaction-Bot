@@ -19,7 +19,7 @@ const botToken = process.env.BOT_TOKEN;
 const botUsername = process.env.BOT_USERNAME;
 const Reactions = splitEmojis(process.env.EMOJI_LIST);
 const RestrictedChats = getChatIds(process.env.RESTRICTED_CHATS);
-const RandomLevel = parseInt(process.env.RANDOM_LEVEL || '0', 10);
+const RandomLevel = parseInt(process.env.RANDOM_LEVEL || '0', 2000);
 
 const botApi = new TelegramBotAPI(botToken);
 
@@ -62,7 +62,7 @@ async function onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, R
             await botApi.sendMessage(chatId, "✅ Enabled Reactions : \n\n" + reactions);
         } else {
             // Calculate the threshold: higher RandomLevel, lower threshold
-            let threshold = 1 - (RandomLevel / 10);
+            let threshold = 1 - (RandomLevel / 2000);
             if (!RestrictedChats.includes(chatId)) {
                 // Check if chat is a group or supergroup to determine if reactions should be random
                 if (["group", "supergroup"].includes(content.chat.type)) {
