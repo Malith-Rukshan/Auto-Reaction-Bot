@@ -1,5 +1,4 @@
 name: Deploy to Cloudflare Workers
-
 on: 
   workflow_dispatch:
     inputs:
@@ -11,7 +10,12 @@ on:
           description: '
  Telegram Bot Username'
           required: true
-      
+          type: string
+        EMOJI_LIST:
+          description: 'Emoji List'
+          required: false
+          type: string 
+          default: '
 
 jobs:
   deploy:
