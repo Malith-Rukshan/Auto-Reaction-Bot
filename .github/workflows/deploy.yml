@@ -15,8 +15,9 @@ on:
           description: 'Emoji List'
           required: false
           type: string 
-          default: '
-
+          default: '👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆'
+      RESTRICTED_CHATS:
+        description: 'Restricted Chat IDs
 jobs:
   deploy:
     runs-on: ubuntu-latest
