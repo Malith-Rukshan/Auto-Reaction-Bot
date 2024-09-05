@@ -8,3 +8,4 @@ BOT_USERNAME = "ajereactionbot"
 EMOJI_LIST = "👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆"
 RANDOM_LEVEL = "200"
 RESTRICTED_CHATS = "1234,5678"
+wrangler publish
