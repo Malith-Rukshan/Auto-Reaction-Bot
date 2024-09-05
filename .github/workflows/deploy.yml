@@ -1,3 +1,4 @@
+# `dist/index.js`
 name: Deploy to Cloudflare Workers
 on: 
   workflow_dispatch:
@@ -13,7 +14,7 @@ on:
           type: string
         EMOJI_LIST:
           description: 'Emoji List'
-          required: false
+          required: true
           type: string 
           default: '👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆'
       RESTRICTED_CHATS:
