@@ -29,7 +29,7 @@
       "postdeploy": "npm install && npm run build"
     },
     "formation": {
-      "web": { "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/76b83619-01f4-4b95-a60f-36df283fdb4f"
+      "web": { 
         "quantity": 1
       }
     }
