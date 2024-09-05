@@ -4,15 +4,15 @@
     "repository": "https://github.com/USDTQBOT/Auto-Reaction-Bot",
     "env": {
       "BOT_TOKEN": {
-        "description": "The Telegram bot token (Generate from BotFather)",
+        "description": "7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM)",
         "required": true
       },
       "BOT_USERNAME": {
-        "description": "The username you have set for your bot.",
+        "description": "ajereactionbot.",
         "required": true
       },
       "EMOJI_LIST": {
-        "description": "A string of emojis that the bot will use to react to messages.",
+        "description": "👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆.",
         "required": true
       },
       "RESTRICTED_CHATS": {
@@ -29,7 +29,7 @@
       "postdeploy": "npm install && npm run build"
     },
     "formation": {
-      "web": {
+      "web": {https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/76b83619-01f4-4b95-a60f-36df283fdb4f
         "quantity": 1
       }
     }
