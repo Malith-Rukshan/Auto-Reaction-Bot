@@ -1,6 +1,6 @@
 {
   "name": "auto-reaction-bot",
-  "version": "2.1.0",
+  "version": "1.1.0",
   "main": "api/index.js",
   "type": "module",
   "scripts": {
@@ -12,6 +12,6 @@
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "node-fetch": "^3.6.0"
+    "node-fetch": "^2.6.1"
   }
 }
