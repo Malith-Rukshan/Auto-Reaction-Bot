@@ -1,4 +1,4 @@
-# `dist/index.js`
+
 name: Deploy to Cloudflare Workers
 on: 
   workflow_dispatch:
@@ -8,8 +8,7 @@ on:
         required: true
         type: string
         BOT_USERNAME:
-          description: '
- Telegram Bot Username'
+          description: 'Telegram Bot Username'
           required: true
           type: string
         EMOJI_LIST:
