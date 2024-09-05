@@ -1,27 +1,9 @@
-
 name: Deploy to Cloudflare Workers
+
 on: 
   workflow_dispatch:
-    inputs:
-      BOT_TOKEN:
-        description: 'Telegram Bot Token'
-        required: true
-        type: string
-        BOT_USERNAME:
-          description: 'Telegram Bot Username'
-          required: true
-          type: string
-        EMOJI_LIST:
-          description: 'Emoji List'
-          required: true
-          type: string 
-          default: '👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆'
-      RESTRICTED_CHATS:
-        description: 'Restricted Chat IDs'
-        required: false
-        type: string
+      
 
-       
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -37,9 +19,11 @@ jobs:
             BOT_TOKEN
             BOT_USERNAME
             EMOJI_LIST
+            RANDOM_LEVEL
             RESTRICTED_CHATS
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           BOT_USERNAME: ${{ secrets.BOT_USERNAME }}
           EMOJI_LIST: ${{ secrets.EMOJI_LIST }}
+          RANDOM_LEVEL: ${{ secrets.RANDOM_LEVEL }}
           RESTRICTED_CHATS: ${{ secrets.RESTRICTED_CHATS }}
