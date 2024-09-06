@@ -4,7 +4,11 @@ on:
   workflow_dispatch:
       inputs:
       BOT_TOKEN:
-      description: 7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM
+      description: '7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM'
+      required: true
+      type: string
+      BOT_USERNAME:
+      
 jobs:
   deploy:
     runs-on: ubuntu-latest
