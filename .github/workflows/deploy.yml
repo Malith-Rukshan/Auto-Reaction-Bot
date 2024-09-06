@@ -3,7 +3,7 @@ name: Deploy Telegram Bot to Cloudflare Workers
 on:
   push:
     branches:
-      - main  # Trigger workflow on push to main branch
+      - main  # Trigger deployment on pushes to the 'main' branch
 
 jobs:
   deploy:
@@ -25,7 +25,3 @@ jobs:
       # Publish to Cloudflare Workers
       - name: Deploy to Cloudflare
         run: wrangler publish
-
-      # Show deployment result
-      - name: Show deployment
-        run: wrangler tail
