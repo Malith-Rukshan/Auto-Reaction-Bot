@@ -2,8 +2,9 @@ name: Deploy to Cloudflare Workers
 
 on: 
   workflow_dispatch:
-      
-
+      inputs:
+      BOT_TOKEN:
+      description: 7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM
 jobs:
   deploy:
     runs-on: ubuntu-latest
