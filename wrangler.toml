@@ -1,7 +1,7 @@
-name = "telegram-bot-worker"
-type = "javascript"  # You can change this based on your worker
-account_id = "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
-compatibility_date = "2023-09-06"
+name = "telegram-random-reaction-bot"
+type = "javascript"
+account_id = "<YOUR_CLOUDFLARE_ACCOUNT_ID>"
+compatibility_date = "2024-09-06"
 
 [env.production]
 workers_dev = true
