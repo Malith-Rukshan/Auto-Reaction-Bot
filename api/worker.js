@@ -1,5 +1,5 @@
 const TELEGRAM_BOT_TOKEN = "7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM";
-const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+const TELEGRAM_API_URL = `https://api.telegram.org/bot${7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM}/sendMessage`;
 
 // Customizable array of reactions
 const defaultReactions = ["👍", "😂", "🔥", "💯", "😎", "🎉", "👏", "🤩"];
