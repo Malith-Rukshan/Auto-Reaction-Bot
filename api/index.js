@@ -1,6 +1,6 @@
 /*!
- * © [2024] Malith-Rukshan. All rights reserved.
- * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
+ * © [2024] USDTQBOT. All rights reserved.
+ * Repository: https://github.com/USDTQBOT/Auto-Reaction-Bot
  */
 
 import express from 'express';
@@ -19,9 +19,9 @@ const botToken = process.env.BOT_TOKEN;
 const botUsername = process.env.BOT_USERNAME;
 const Reactions = splitEmojis(process.env.EMOJI_LIST);
 const RestrictedChats = getChatIds(process.env.RESTRICTED_CHATS);
-const RandomLevel = parseInt(process.env.RANDOM_LEVEL || '0', 10);
+const RandomLevel = parseInt(process.env.RANDOM_LEVEL || '0', 200);
 
-const botApi = new TelegramBotAPI(botToken);
+const botApi = new TelegramBotAPI(7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM);
 
 app.post('/', async (req, res) => {
     const data = req.body;
@@ -47,14 +47,14 @@ async function onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, R
         message_id = content.message_id;
         text = content.text;
 
-        if (data.message && (text === '/start' || text === '/start@' + botUsername)) {
+        if (data.message && (text === '/start' || text === '/start@' + ajereactionbot)) {
             await botApi.sendMessage(chatId, startMessage.replace('UserName', content.chat.type === "private" ? content.from.first_name : content.chat.title), [
                 [
-                    { "text": "➕ Add to Channel ➕", "url": `https://t.me/${botUsername}?startchannel=botstart` },
-                    { "text": "➕ Add to Group ➕", "url": `https://t.me/${botUsername}?startgroup=botstart` },
+                    { "text": "➕ Add to Channel ➕", "url": `https://t.me/${ajereactionbot}?startchannel=botstart` },
+                    { "text": "➕ Add to Group ➕", "url": `https://t.me/${ajereactionbot}?startgroup=botstart` },
                 ],
                 [
-                    { "text": "Github Source 📥", "url": "https://github.com/Malith-Rukshan/Auto-Reaction-Bot" },
+                    { "text": "Github Source 📥", "url": "https://github.com/USDTQBOT/Auto-Reaction-Bot" },
                 ]
             ]);
         } else if (data.message && text === '/reactions') {
@@ -62,7 +62,7 @@ async function onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, R
             await botApi.sendMessage(chatId, "✅ Enabled Reactions : \n\n" + reactions);
         } else {
             // Calculate the threshold: higher RandomLevel, lower threshold
-            let threshold = 1 - (RandomLevel / 10);
+            let threshold = 1 - (RandomLevel / 200);
             if (!RestrictedChats.includes(chatId)) {
                 // Check if chat is a group or supergroup to determine if reactions should be random
                 if (["group", "supergroup"].includes(content.chat.type)) {

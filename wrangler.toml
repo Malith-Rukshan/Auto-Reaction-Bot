@@ -1,3 +1,7 @@
-name = "auto-reaction-bot"
-main = "api/worker.js"
-compatibility_date = "2024-06-02"
+name = "telegram-random-reaction-bot"
+type = "javascript"
+account_id = "<YOUR_CLOUDFLARE_ACCOUNT_ID>"
+compatibility_date = "2024-09-06"
+
+[env.production]
+workers_dev = true

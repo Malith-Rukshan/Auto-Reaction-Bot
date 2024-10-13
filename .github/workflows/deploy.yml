@@ -1,29 +1,31 @@
-name: Deploy to Cloudflare Workers
+name: Deploy Telegram Bot to Cloudflare Workers
 
-on: 
-  workflow_dispatch:
-      
+on:
+  push:
+    branches:
+      - main  # Trigger workflow on pushes to the main branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Deploy
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          secrets: |
-            BOT_TOKEN
-            BOT_USERNAME
-            EMOJI_LIST
-            RANDOM_LEVEL
-            RESTRICTED_CHATS
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          BOT_USERNAME: ${{ secrets.BOT_USERNAME }}
-          EMOJI_LIST: ${{ secrets.EMOJI_LIST }}
-          RANDOM_LEVEL: ${{ secrets.RANDOM_LEVEL }}
-          RESTRICTED_CHATS: ${{ secrets.RESTRICTED_CHATS }}
+      # Checkout the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Install Wrangler (Cloudflare CLI tool)
+      - name: Install Wrangler
+        run: npm install -g wrangler
+
+      # Authenticate Wrangler with Cloudflare API token from GitHub secrets
+      - name: Authenticate Wrangler
+        run: wrangler config --api-token ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      # Deploy the Worker to Cloudflare
+      - name: Deploy to Cloudflare
+        run: wrangler publish
+
+      # Optionally tail logs for debugging
+      - name: Tail Worker logs
+        run: wrangler tail

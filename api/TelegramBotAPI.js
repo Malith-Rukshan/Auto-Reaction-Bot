@@ -2,13 +2,13 @@
  * Telegram API for: 
  *      - sendMessage
  *      - setMessageReaction
- * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
+ * Repository: https://github.com/USDTQBOT/Auto-Reaction-Bot
  */
 import fetch from 'node-fetch';
 
 export default class TelegramBotAPI {
-    constructor(botToken) {
-        this.apiUrl = `https://api.telegram.org/bot${botToken}/`;
+    constructor(Token) {
+        this.apiUrl = `https://api.telegram.org/bot${Token}/`;
     }
 
     async callApi(action, body) {
