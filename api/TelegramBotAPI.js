@@ -7,8 +7,8 @@
 import fetch from 'node-fetch';
 
 export default class TelegramBotAPI {
-    constructor(7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM) {
-        this.apiUrl = `https://api.telegram.org/bot${7228651385:AAHvVY9oZAzqoZp2aeProh1i16riopePySM}/`;
+    constructor(Token) {
+        this.apiUrl = `https://api.telegram.org/bot${Token}/`;
     }
 
     async callApi(action, body) {
