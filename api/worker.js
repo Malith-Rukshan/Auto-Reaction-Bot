@@ -93,6 +93,9 @@ export default {
                     }
                 }
             }
+        } else if (data.pre_checkout_query){
+            await botApi.answerPreCheckoutQuery(data.pre_checkout_query.id, true);
+            await botApi.sendMessage(data.pre_checkout_query.from.id, "Thank you for your donation! 💝");
         }
     }
 };

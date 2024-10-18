@@ -82,4 +82,16 @@ export default class TelegramBotAPI {
             prices: prices
         });
     }
+
+    /**
+     * https://core.telegram.org/bots/api#answerprecheckoutquery
+     * @param {string} preCheckoutQueryId - Unique identifier for the query to be answered
+     * @param {boolean} ok - Specify if the query was successful
+     */
+    async answerPreCheckoutQuery(preCheckoutQueryId, ok) {
+        await this.callApi('answerPreCheckoutQuery', {
+            pre_checkout_query_id: preCheckoutQueryId,
+            ok: ok
+        });
+    }
 };
