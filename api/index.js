@@ -7,7 +7,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import TelegramBotAPI from './TelegramBotAPI.js';
-import { htmlContent, startMessage } from './constants.js';
+import { htmlContent, startMessage, donateMessage } from './constants.js';
 import { splitEmojis, getRandomPositiveReaction, getChatIds } from './helper.js';
 
 dotenv.config();
@@ -55,11 +55,25 @@ async function onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, R
                 ],
                 [
                     { "text": "Github Source 📥", "url": "https://github.com/Malith-Rukshan/Auto-Reaction-Bot" },
+                ],
+                [
+                    { "text": "💝 Support Us - Donate 🤝", "url": "https://t.me/Auto_ReactionBOT?start=donate" }
                 ]
             ]);
         } else if (data.message && text === '/reactions') {
             const reactions = Reactions.join(", ");
             await botApi.sendMessage(chatId, "✅ Enabled Reactions : \n\n" + reactions);
+        } else if (data.message && text === '/donate') {
+            await botApi.sendInvoice(
+                chatId,
+                "Donate to Auto Reaction Bot ✨",
+                donateMessage,
+                '{}',
+                '',
+                'donate',
+                'XTR',
+                [{ label: 'Pay ⭐️1', amount: 1 }],
+            )
         } else {
             // Calculate the threshold: higher RandomLevel, lower threshold
             let threshold = 1 - (RandomLevel / 10);
