@@ -63,7 +63,7 @@ async function onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, R
         } else if (data.message && text === '/reactions') {
             const reactions = Reactions.join(", ");
             await botApi.sendMessage(chatId, "✅ Enabled Reactions : \n\n" + reactions);
-        } else if (data.message && text === '/donate') {
+        } else if (data.message && text === '/donate' || text === '/start donate') {
             await botApi.sendInvoice(
                 chatId,
                 "Donate to Auto Reaction Bot ✨",
