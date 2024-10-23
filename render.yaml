@@ -19,4 +19,3 @@ services:
         value: "3000"
     healthCheckPath: /
     autoDeploy: true
-    env: production
