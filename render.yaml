@@ -2,7 +2,7 @@ services:
   - type: web
     name: auto-reaction-bot
     runtime: node
-    env: node
+    plan: starter
     repo: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
     buildCommand: npm install
     startCommand: node api/index.js
@@ -17,5 +17,7 @@ services:
         sync: false
       - key: PORT
         value: "3000"
+      - key: NODE_ENV
+        value: production
     healthCheckPath: /
-    autoDeploy: true
+    autoDeploy: false
