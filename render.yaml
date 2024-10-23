@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: auto-reaction-bot
+    env: docker
+    repo: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: BOT_TOKEN
+        sync: false 
+      - key: BOT_USERNAME
+        sync: false
+      - key: EMOJI_LIST
+        sync: false
+      - key: RESTRICTED_CHATS
+        sync: false
+      - key: PORT
+        value: "3000"
+    healthCheckPath: /
+    autoDeploy: true
+    env: production
