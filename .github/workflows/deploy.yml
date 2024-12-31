@@ -22,8 +22,8 @@ jobs:
             RANDOM_LEVEL
             RESTRICTED_CHATS
         env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          BOT_USERNAME: ${{ secrets.BOT_USERNAME }}
-          EMOJI_LIST: ${{ secrets.EMOJI_LIST }}
-          RANDOM_LEVEL: ${{ secrets.RANDOM_LEVEL }}
+          BOT_TOKEN: ${{ 7539216226:AAEG4A26rdA650MFzx_kx2gNj3ukcswUoRU }}
+          BOT_USERNAME: ${{ @DOGRAT1O1BOT }}
+          EMOJI_LIST: ${{ 👍❤🙏😍👏 }}
+          RANDOM_LEVEL: ${{ 0 }}
           RESTRICTED_CHATS: ${{ secrets.RESTRICTED_CHATS }}
