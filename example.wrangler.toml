@@ -1,10 +1,10 @@
-name = "auto-reaction-bot"
+name = "TYMTYM"
 main = "src/index.js"
-compatibility_date = "2024-02-08"
+compatibility_date = "2025-01-08"
 
 [vars]
-BOT_TOKEN = "12345678:PAST-YOUR-BOT-TOKEN-HERE"
-BOT_USERNAME = "Auto_ReactionBOT"
-EMOJI_LIST = "👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆"
-RANDOM_LEVEL = "2"
-RESTRICTED_CHATS = "1234,5678"
+BOT_TOKEN = "7720361034:AAF9y-kaCN8juLbf1xDSyzKFE2ddlrbS6Mk"
+BOT_USERNAME = "Tym10k_Bot"
+EMOJI_LIST = "👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳😇😎🙂‍↔️😗😇😕🥳🧐🤨🥰🥲🤩😝🥳😢😢🥶🥵🤬😱😤😍🤣🤣😂😃😀❤‍🔥💯⚡🏆"
+RANDOM_LEVEL = "1"
+RESTRICTED_CHATS = ","
