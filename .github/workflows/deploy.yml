@@ -22,7 +22,7 @@ jobs:
             RANDOM_LEVEL
             RESTRICTED_CHATS
         env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BOT_TOKEN: ${{ 7625817905:AAFs3PYcpL8sVf5oqoKydIW4W99LiMEyMjw }}
           BOT_USERNAME: ${{ secrets.BOT_USERNAME }}
           EMOJI_LIST: ${{ secrets.EMOJI_LIST }}
           RANDOM_LEVEL: ${{ secrets.RANDOM_LEVEL }}
