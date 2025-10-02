@@ -1,5 +1,5 @@
 /*!
- * © [2024] Malith-Rukshan. All rights reserved.
+ * © [2025] Malith-Rukshan. All rights reserved.
  * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
  */
 
