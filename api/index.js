@@ -4,7 +4,6 @@
  */
 
 import express from 'express';
-import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import TelegramBotAPI from './TelegramBotAPI.js';
 import { htmlContent } from './constants.js';
@@ -14,7 +13,7 @@ import { onUpdate } from './bot-handler.js';
 dotenv.config();
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 const botToken = process.env.BOT_TOKEN;
 const botUsername = process.env.BOT_USERNAME;
