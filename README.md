@@ -23,7 +23,7 @@
 </div>
 
 ##
-![Auto Reaction Preview](https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/preview.gif)
+![Auto Reaction Preview](https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/images/preview.gif)
 
 
 ## ✨ Features
@@ -72,14 +72,14 @@ Deploying this Telegram Auto-Reaction Bot on Cloudflare is straightforward thank
     - You must add Repository secrets according to instructions before deployment.
     - After Deploy you must [Configure the Webhook](#-configure-the-webhook)
 
-<details><summary>Cloudflare Worker Settings</summary><img align="center" src="https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/cloudflare-settings.png"/></details>
+<details><summary>Cloudflare Worker Settings</summary><img align="center" src="https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/images/cloudflare-settings.png"/></details>
 
 ✅ **Demo**: Experience the Auto Reaction Bot in demo: [Auto Reaction Bot ✨](https://t.me/Auto_ReactionBOT).
 
 ## 🚀 Deploy with Github Actions
 First you must Add Repository secrets as follows
 
-<details><summary>Add Repository secrets</summary><img align="center" src="https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/github-secrets.png"/></details>
+<details><summary>Add Repository secrets</summary><img align="center" src="https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/images/github-secrets.png"/></details>
 
 After that [Click Here](https://github.com/Malith-Rukshan/Auto-Reaction-Bot/actions/workflows/deploy.yml) to Run Action.
 
@@ -118,7 +118,7 @@ Before you begin, you will need to have git installed on your local machine to c
 
 ### Step 1: Clone the Repository
 Start by cloning the repository to your local machine. Open your terminal and run the following command:
-```
+```shell
 git clone https://github.com/Malith-Rukshan/Auto-Reaction-Bot.git
 cd Auto-Reaction-Bot
 ```
@@ -131,10 +131,19 @@ To deploy using Cloudflare Wrangler, you must first install it. You can find the
 
 ### Step 4: Deploy Using Wrangler
 Once Wrangler is installed and you've configured your wrangler.toml file, deploy your project to Cloudflare Workers by running the following command in your terminal:
-```
+```shell
 wrangler publish
 ```
 This command will deploy your bot to Cloudflare Workers, now you must [Configure the Webhook](#-configure-the-webhook). After All it will start reacting to messages in Telegram chats as configured.
+
+## 🏗️ Architecture
+
+![Architecture Diagram](https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/images/architecture.png)
+
+### Deployment Options
+- **🐳 Traditional Server**: Docker, Railway, Render, Heroku (uses `api/index.js`)
+- **⚡ Serverless**: Cloudflare Workers, Vercel (uses `api/worker.js`)
+- **🔗 Shared Logic**: Both use `api/bot-handler.js` for core functionality
 
 ## 🎯 Credits and Other
 - Based on [Telegram BOT API](https://core.telegram.org/bots/api)
