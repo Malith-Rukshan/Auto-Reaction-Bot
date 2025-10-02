@@ -12,17 +12,44 @@ export default class TelegramBotAPI {
     }
 
     async callApi(action, body) {
-        const response = await fetch(this.apiUrl + action, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
-        });
-        const data = await response.json();
-        if (!response.ok) {
-            console.error(`Telegram API request failed: ${action}`, data);
-            throw new Error('Telegram API request failed: ' + action);
+        try {
+            const response = await fetch(this.apiUrl + action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body),
+                signal: AbortSignal.timeout(10000) // 10 second timeout
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                // Log error without exposing sensitive data (tokens, etc.)
+                console.error(`Telegram API request failed: ${action} (Status: ${response.status})`);
+                if (data.description) {
+                    console.error(`Error description: ${data.description}`);
+                }
+                if (data.error_code) {
+                    console.error(`Error code: ${data.error_code}`);
+                }
+
+                throw new Error(`Telegram API error: ${data.description || 'Unknown error'}`);
+            }
+
+            return data;
+
+        } catch (error) {
+            // Log network/timeout errors without sensitive data
+            if (error.name === 'AbortError') {
+                console.error(`Request timeout for ${action}`);
+                throw new Error(`Telegram API timeout: ${action}`);
+            } else if (!error.message.includes('Telegram API error')) {
+                console.error(`Network error for ${action}: ${error.message}`);
+                throw new Error(`Network error: ${action}`);
+            }
+
+            throw error;
         }
     }
 
