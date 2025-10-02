@@ -8,21 +8,41 @@ import { htmlContent } from './constants.js';
 import { splitEmojis, returnHTML, getChatIds } from "./helper.js";
 import { onUpdate } from './bot-handler.js';
 
-export default {
-    async fetch(request, env, ctx) {
-        // Access the bot token and emoji list from environment variables
-        const botToken = env.BOT_TOKEN;
-        const botUsername = env.BOT_USERNAME;
-        const Reactions = splitEmojis(env.EMOJI_LIST);
-        const RestrictedChats = getChatIds(env.RESTRICTED_CHATS);
-        const RandomLevel = parseInt(env.RANDOM_LEVEL || '0', 10);
+// Cache for parsed environment variables to avoid repeated parsing
+let configCache = null;
 
-        const botApi = new TelegramBotAPI(botToken);
+function getConfig(env) {
+    // Parse environment variables once and cache them
+    if (!configCache || configCache.env !== env) {
+        configCache = {
+            env: env,
+            botToken: env.BOT_TOKEN,
+            botUsername: env.BOT_USERNAME,
+            reactions: splitEmojis(env.EMOJI_LIST),
+            restrictedChats: getChatIds(env.RESTRICTED_CHATS),
+            randomLevel: parseInt(env.RANDOM_LEVEL || '0', 10),
+            botApi: new TelegramBotAPI(env.BOT_TOKEN)
+        };
+    }
+    return configCache;
+}
+
+export default {
+    async fetch(request, env) {
+        // Parse environment variables once at startup
+        const config = getConfig(env);
 
         if (request.method === 'POST') {
             const data = await request.json()
             try {
-                await onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, RandomLevel)
+                await onUpdate(
+                    data,
+                    config.botApi,
+                    config.reactions,
+                    config.restrictedChats,
+                    config.botUsername,
+                    config.randomLevel
+                )
             } catch (error) {
                 console.error('Error in onUpdate:', error.message)
             }
