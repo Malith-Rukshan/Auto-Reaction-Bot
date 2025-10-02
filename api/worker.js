@@ -31,6 +31,20 @@ export default {
     async fetch(request, env) {
         // Parse environment variables once at startup
         const config = getConfig(env);
+        const url = new URL(request.url);
+
+        // Health check endpoint
+        if (url.pathname === '/health' && request.method === 'GET') {
+            return new Response(JSON.stringify({
+                status: 'ok',
+                timestamp: new Date().toISOString(),
+                environment: env.NODE_ENV || 'production',
+                botConfigured: !!config.botToken && !!config.botUsername
+            }), {
+                status: 200,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
 
         if (request.method === 'POST') {
             const data = await request.json()

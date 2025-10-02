@@ -38,6 +38,16 @@ app.get('/', (req, res) => {
     res.send(htmlContent);
 });
 
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        status: 'ok',
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
+        environment: process.env.NODE_ENV || 'development',
+        botConfigured: !!botToken && !!botUsername
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
