@@ -1,10 +1,9 @@
 /**
- * Telegram API for: 
+ * Telegram API for:
  *      - sendMessage
  *      - setMessageReaction
  * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
  */
-import fetch from 'node-fetch';
 
 export default class TelegramBotAPI {
     constructor(botToken) {
