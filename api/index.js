@@ -72,7 +72,7 @@ async function onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, R
                 '',
                 'donate',
                 'XTR',
-                [{ label: 'Pay ⭐️1', amount: 1 }],
+                [{ label: 'Pay ⭐️5', amount: 5 }],
             )
         } else {
             // Calculate the threshold: higher RandomLevel, lower threshold
