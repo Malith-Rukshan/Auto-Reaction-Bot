@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="650" height="700" viewBox="0 0 650 700">
+  <defs>
+    <clipPath id="clip-Auto-reaction-bot-cycle">
+      <rect width="650" height="700"/>
+    </clipPath>
+  </defs>
+  <g id="Auto-reaction-bot-cycle" clip-path="url(#clip-Auto-reaction-bot-cycle)">
+    <rect width="650" height="700" fill="#fff"/>
+    <g id="items" transform="translate(-0.955 -9.5)" style="isolation: isolate">
+      <g id="blend">
+        <g id="g-root-tx_telegram_1lu9zype89udm-fill" transform="translate(104 38)">
+          <g id="tx_telegram_1lu9zype89udm-fill-merged">
+            <g id="Group_31" data-name="Group 31">
+              <text id="Telegram_Auto_Reaction_Bot_Cycle" data-name="Telegram Auto Reaction Bot Cycle" transform="translate(16.27 42.5)" fill="#484848" font-size="25" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">Telegram Auto Reaction Bot Cycle</tspan></text>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-tx_usersend_1upaj4he89wqo-fill" transform="translate(242 146)">
+          <g id="tx_usersend_1upaj4he89wqo-fill-merged">
+            <g id="Group_32" data-name="Group 32">
+              <g id="Group">
+                <text id="User_Sends_" data-name="User Sends " transform="translate(17.14 33.5)" fill="#32444a" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">User Sends </tspan></text>
+                <text id="Message" transform="translate(26.8 57.5)" fill="#32444a" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Message</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-tx_botsends_mah0sxe89w5q-fill" transform="translate(38 266)">
+          <g id="tx_botsends_mah0sxe89w5q-fill-merged">
+            <g id="Group_33" data-name="Group 33">
+              <g id="Group-2" data-name="Group">
+                <text id="Bot_Sends_" data-name="Bot Sends " transform="translate(13.5 33.5)" fill="#543a3a" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Bot Sends </tspan></text>
+                <text id="Response" transform="translate(16.13 57.5)" fill="#543a3a" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Response</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-tx_messaget_3zz9te89w5i-fill" transform="translate(470 266)">
+          <g id="tx_messaget_3zz9te89w5i-fill-merged">
+            <g id="Group_34" data-name="Group 34">
+              <text id="Message_to_Telegram_API" data-name="Message to 
+Telegram API" transform="translate(12 33.5)" fill="#374840" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Message to </tspan><tspan x="0" y="24">Telegram API</tspan></text>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-tx_bothandl_huniohe89wy0-fill" transform="translate(14 458)">
+          <g id="tx_bothandl_huniohe89wy0-fill-merged">
+            <g id="Group_35" data-name="Group 35">
+              <g id="Group-3" data-name="Group">
+                <text id="Bot_Handler_" data-name="Bot Handler " transform="translate(22.91 33.5)" fill="#4c4034" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Bot Handler </tspan></text>
+                <text id="Processes_" data-name="Processes " transform="translate(34.74 57.5)" fill="#4c4034" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Processes </tspan></text>
+                <text id="Command" transform="translate(35.29 81.5)" fill="#4c4034" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Command</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-tx_webhooks_4jthe9e89vd8-fill" transform="translate(470 458)">
+          <g id="tx_webhooks_4jthe9e89vd8-fill-merged">
+            <g id="Group_36" data-name="Group 36">
+              <text id="Webhook_Sends_Request" data-name="Webhook 
+Sends Request" transform="translate(12 33.5)" fill="#424736" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Webhook </tspan><tspan x="0" y="24">Sends Request</tspan></text>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-tx_deployme_dfghn5e89uki-fill" transform="translate(242 578)">
+          <g id="tx_deployme_dfghn5e89uki-fill-merged">
+            <g id="Group_37" data-name="Group 37">
+              <g id="Group-4" data-name="Group">
+                <text id="Deployment_" data-name="Deployment " transform="translate(14.38 33.5)" fill="#46432d" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Deployment </tspan></text>
+                <text id="Processes_2" data-name="Processes " transform="translate(20.89 57.5)" fill="#46432d" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Processes </tspan></text>
+                <text id="Request" transform="translate(31.12 81.5)" fill="#46432d" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Request</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-sy_-1_line_1upwx1te8b9ji-stroke" transform="translate(145.999 354.815)">
+          <g id="sy_-1_line_1upwx1te8b9ji-stroke">
+            <g id="Group_38" data-name="Group 38">
+              <path id="Path_297" data-name="Path 297" d="M12.75,11.95a156.868,156.868,0,0,0,.82,62.52" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+              <path id="Path_298" data-name="Path 298" d="M18.3,18.9l-5.4-7.4L5.4,16.8" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-sy_-1_line_1_1upwx1te8b9jj-stroke" transform="translate(198.699 502.905)">
+          <g id="sy_-1_line_1_1upwx1te8b9jj-stroke">
+            <g id="Group_39" data-name="Group 39">
+              <path id="Path_299" data-name="Path 299" d="M11.46,11.28a155.764,155.764,0,0,0,54.4,30.46" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+              <path id="Path_300" data-name="Path 300" d="M20.3,10l-9.1,1,.9,9.1" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-sy_-1_line_2_1qa3exde8babs-stroke" transform="translate(351.499 501.455)">
+          <g id="sy_-1_line_2_1qa3exde8babs-stroke">
+            <g id="Group_40" data-name="Group 40">
+              <path id="Path_301" data-name="Path 301" d="M11.88,41.88A155.947,155.947,0,0,0,65.41,10" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+              <path id="Path_302" data-name="Path 302" d="M15.2,33.6,11.4,42l8.4,3.8" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-sy_-1_line_3_1qa3exde8babt-stroke" transform="translate(454.42 352.685)">
+          <g id="sy_-1_line_3_1qa3exde8babt-stroke">
+            <g id="Group_41" data-name="Group 41">
+              <path id="Path_303" data-name="Path 303" d="M10.83,72.53a156.23,156.23,0,0,0,2.75-29.22A156.3,156.3,0,0,0,10,10" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+              <path id="Path_304" data-name="Path 304" d="M5.3,65.5,10.7,73l7.5-5.4" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-sy_-1_line_4_1qa3exde8babu-stroke" transform="translate(349.439 237.355)">
+          <g id="sy_-1_line_4_1qa3exde8babu-stroke">
+            <g id="Group_42" data-name="Group 42">
+              <path id="Path_305" data-name="Path 305" d="M64.38,40.45A155.653,155.653,0,0,0,10,10" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+              <path id="Path_306" data-name="Path 306" d="M55.5,41.7l9.2-.9-.9-9.2" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-sy_-1_line_5_1qa3exde8babv-stroke" transform="translate(197.1 238.025)">
+          <g id="sy_-1_line_5_1qa3exde8babv-stroke">
+            <g id="Group_43" data-name="Group 43">
+              <path id="Path_307" data-name="Path 307" d="M63.52,10.64A155.88,155.88,0,0,0,10,42.51" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+              <path id="Path_308" data-name="Path 308" d="M60.2,18.9,64,10.5,55.6,6.7" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-ic_hear_hrj58xe89vrc-stroke" transform="translate(278 206)">
+          <g id="ic_hear_hrj58xe89vrc-stroke">
+            <g id="Group_44" data-name="Group 44">
+              <path id="Path_309" data-name="Path 309" d="M27,34a2,2,0,0,0,2,2h4v7l7-7H55a2,2,0,0,0,2-2V13a2,2,0,0,0-2-2H29a2,2,0,0,0-2,2ZM12.5,30.5A4.5,4.5,0,1,0,17,26a4.5,4.5,0,0,0-4.5,4.5M17,37a6,6,0,0,0-6,6v4h3l1,10h4l1-10h3V43A6,6,0,0,0,17,37Zm25-6-7-8a4.16,4.16,0,0,1-.58-4.76h0a4,4,0,0,1,6.46-1.06L42,18.3l1.12-1.12a4,4,0,0,1,6.46,1.06h0A4.16,4.16,0,0,1,49,23Z" fill="none" stroke="#1eabda" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-ic_repl_1lu9wsxe8bb44-stroke" transform="translate(146 284)">
+          <g id="ic_repl_1lu9wsxe8bb44-stroke">
+            <g id="Group_45" data-name="Group 45">
+              <path id="Path_310" data-name="Path 310" d="M30,26.908s25-3,25,22c-8-15-25-10-25-10v8l-17-14,17-14Z" fill="none" stroke="#e55753" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-ic_hi_144veq9e88gsi-stroke" transform="translate(410 284)">
+          <g id="ic_hi_144veq9e88gsi-stroke">
+            <g id="Group_46" data-name="Group 46">
+              <path id="Path_311" data-name="Path 311" d="M44.86,11A12,12,0,0,0,33,23.14a12,12,0,0,0,1.56,6.38L31,37l7.48-3.56A12.12,12.12,0,1,0,44.86,11ZM49,28V18M41,28V18m4,10V18m-4,6h4M43,39V57M11,57V21a4,4,0,0,1,4-4H30M21.5,43.5A4.5,4.5,0,1,0,26,39a4.5,4.5,0,0,0-4.5,4.5M35,57a9.3,9.3,0,0,0-18,0m6-36h6" fill="none" stroke="#3cc583" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-ic_chat_1hbc18xe8e3uy-stroke" transform="translate(146 440)">
+          <g id="ic_chat_1hbc18xe8e3uy-stroke">
+            <g id="Group_47" data-name="Group 47">
+              <path id="Path_312" data-name="Path 312" d="M13.5,25.5A6.5,6.5,0,1,0,20,19,6.5,6.5,0,0,0,13.5,25.5ZM23.8,57,25,51h4V44a9,9,0,0,0-18,0v7h4l1.2,6M57,29a2,2,0,0,1-2,2H44l-7,6V31H35a2,2,0,0,1-2-2V13a2,2,0,0,1,2-2H55a2,2,0,0,1,2,2ZM13.5,25.5A6.5,6.5,0,1,0,20,19,6.5,6.5,0,0,0,13.5,25.5ZM23.8,57,25,51h4V44a9,9,0,0,0-18,0v7h4l1.2,6M39,16l4,4-4,4m6-1h8" fill="none" stroke="#de8431" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-ic_came_1czvxw1e88idr-stroke" transform="translate(410 440)">
+          <g id="ic_came_1czvxw1e88idr-stroke">
+            <g id="Group_48" data-name="Group 48">
+              <path id="Path_313" data-name="Path 313" d="M37.928,48.734l7.644-7.642A2.846,2.846,0,0,1,49.6,45.114L40.716,54a5.69,5.69,0,1,1-8.046-8.046L42.4,36.2A8.535,8.535,0,0,1,54.47,48.27l-8.5,8.51M27.02,57h-14a2,2,0,0,1-2-2V13a2,2,0,0,1,2-2H39.6a2,2,0,0,1,1.414.586L48.434,19a2,2,0,0,1,.586,1.414V28m-21,16h-8a2,2,0,0,1-2-2V30a2,2,0,0,1,2-2h4l1.446-2.894A2,2,0,0,1,27.254,24h5.528a2,2,0,0,1,1.79,1.106L36.02,28h4a2,2,0,0,1,2,2v1m-16,4a4,4,0,1,0,4-4,4,4,0,0,0-4,4" fill="none" stroke="#92bd39" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+        <g id="g-root-ic_tran_hwixxte88gzv-stroke" transform="translate(278 518)">
+          <g id="ic_tran_hwixxte88gzv-stroke">
+            <g id="Group_49" data-name="Group 49">
+              <path id="Path_314" data-name="Path 314" d="M21,29H12.846A1.926,1.926,0,0,1,11,27V13a1.928,1.928,0,0,1,1.846-2H33.154A1.928,1.928,0,0,1,35,13V25M15,33h6M11,25H35m6,28v3.938M33,57H49m8-7.6A3.416,3.416,0,0,1,53.8,53H28.2A3.418,3.418,0,0,1,25,49.4V32.6A3.42,3.42,0,0,1,28.2,29H53.8A3.418,3.418,0,0,1,57,32.6ZM25,47H57" fill="none" stroke="#e0cb15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

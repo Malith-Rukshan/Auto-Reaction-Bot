@@ -138,7 +138,7 @@ This command will deploy your bot to Cloudflare Workers, now you must [Configure
 
 ## 🏗️ Architecture
 
-![Architecture Diagram](https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/images/architecture.png)
+![Architecture Diagram](https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/images/architecture.svg)
 
 ### Deployment Options
 - **🐳 Traditional Server**: Docker, Railway, Render, Heroku (uses `api/index.js`)
