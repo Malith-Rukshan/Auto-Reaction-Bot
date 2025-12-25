@@ -4,7 +4,7 @@ services:
     container_name: auto-reaction-bot
     restart: unless-stopped
     ports:
-      - "${PORT:-3000}:3000"
+      - "${EXPOSE_PORT:-3000}:3000"
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
       - BOT_USERNAME=${BOT_USERNAME}
