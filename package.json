@@ -10,8 +10,8 @@
     "cloudflare": "wrangler dev"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "dotenv": "^17.2.3",
+    "express": "^4.22.1"
   },
   "engines": {
     "node": ">=22.x"

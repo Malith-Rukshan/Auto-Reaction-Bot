@@ -1,4 +1,4 @@
-FROM node:24.9.0-slim
+FROM node:24.12.0-slim
 
 WORKDIR /app
 COPY package*.json ./
