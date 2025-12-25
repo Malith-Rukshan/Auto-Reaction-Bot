@@ -1,0 +1,23 @@
+services:
+  auto-reaction-bot:
+    build: .
+    container_name: auto-reaction-bot
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - BOT_USERNAME=${BOT_USERNAME}
+      - EMOJI_LIST=${EMOJI_LIST}
+      - RANDOM_LEVEL=${RANDOM_LEVEL:-0}
+      - RESTRICTED_CHATS=${RESTRICTED_CHATS}
+      - PORT=${PORT:-3000}
+      - NODE_ENV=${NODE_ENV:-production}
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"require('http').get('http://localhost:3000/health', (res) => process.exit(res.statusCode === 200 ? 0 : 1))\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
