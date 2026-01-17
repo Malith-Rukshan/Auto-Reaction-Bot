@@ -1,28 +1,55 @@
-import TelegramBot from "node-telegram-bot-api";
-import { handleUpdate } from "./bot-handler.js";
+import TelegramBotAPI from "./TelegramBotAPI.js";
+import {
+  EMOJI_LIST,
+  RANDOM_LEVEL,
+  RESTRICTED_CHATS
+} from "./constants.js";
+import { shouldReact } from "./helper.js";
 
-const token = process.env.BOT_TOKEN;
+/**
+ * Main Telegram update handler
+ * Compatible with polling + webhook
+ */
+export default async function botHandler(update, env) {
+  if (!update || !update.message) return;
 
-if (!token) {
-  throw new Error("BOT_TOKEN is missing");
-}
+  const message = update.message;
+  const chatId = message.chat.id;
+  const text = message.text || "";
+  const userId = message.from?.id;
 
-const bot = new TelegramBot(token, { polling: true });
+  const bot = new TelegramBotAPI(env.BOT_TOKEN);
 
-console.log("Telegram bot polling started");
-
-bot.on("message", async (msg) => {
-  try {
-    await handleUpdate(
-      {
-        update_id: Date.now(),
-        message: msg
-      },
-      {
-        BOT_TOKEN: token
-      }
-    );
-  } catch (err) {
-    console.error("Update error:", err);
+  /* ───────────────────────────────
+     /start command
+  ─────────────────────────────── */
+  if (text === "/start") {
+    await bot.sendMessage(chatId, "🤖 Bot is online and running!");
+    return;
   }
-});
+
+  /* ───────────────────────────────
+     Restricted chats
+  ─────────────────────────────── */
+  if (RESTRICTED_CHATS?.includes(String(chatId))) {
+    return;
+  }
+
+  /* ───────────────────────────────
+     Reaction logic
+  ─────────────────────────────── */
+  if (!shouldReact(RANDOM_LEVEL)) return;
+
+  if (!message.message_id) return;
+
+  const emojis = EMOJI_LIST;
+  if (!emojis || emojis.length === 0) return;
+
+  const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+  try {
+    await bot.setMessageReaction(chatId, message.message_id, emoji);
+  } catch (err) {
+    console.error("Reaction failed:", err?.message || err);
+  }
+}
