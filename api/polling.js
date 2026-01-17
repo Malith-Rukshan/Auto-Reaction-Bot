@@ -1,5 +1,5 @@
 import TelegramBot from "node-telegram-bot-api";
-import handleUpdate from "./bot-handler.js";
+import { handleUpdate } from "./bot-handler.js";
 
 const token = process.env.BOT_TOKEN;
 
