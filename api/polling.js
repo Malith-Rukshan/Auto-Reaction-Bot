@@ -1,55 +1,32 @@
+import TelegramBot from "node-telegram-bot-api";
+import { onUpdate } from "./bot-handler.js";
 import TelegramBotAPI from "./TelegramBotAPI.js";
 import {
   EMOJI_LIST,
-  RANDOM_LEVEL,
-  RESTRICTED_CHATS
+  RESTRICTED_CHATS,
+  BOT_USERNAME,
+  RANDOM_LEVEL
 } from "./constants.js";
-import { shouldReact } from "./helper.js";
 
-/**
- * Main Telegram update handler
- * Compatible with polling + webhook
- */
-export default async function botHandler(update, env) {
-  if (!update || !update.message) return;
+const token = process.env.BOT_TOKEN;
+if (!token) throw new Error("BOT_TOKEN missing");
 
-  const message = update.message;
-  const chatId = message.chat.id;
-  const text = message.text || "";
-  const userId = message.from?.id;
+const tgBot = new TelegramBot(token, { polling: true });
+const botApi = new TelegramBotAPI(token);
 
-  const bot = new TelegramBotAPI(env.BOT_TOKEN);
+console.log("Telegram bot polling started");
 
-  /* ───────────────────────────────
-     /start command
-  ─────────────────────────────── */
-  if (text === "/start") {
-    await bot.sendMessage(chatId, "🤖 Bot is online and running!");
-    return;
-  }
-
-  /* ───────────────────────────────
-     Restricted chats
-  ─────────────────────────────── */
-  if (RESTRICTED_CHATS?.includes(String(chatId))) {
-    return;
-  }
-
-  /* ───────────────────────────────
-     Reaction logic
-  ─────────────────────────────── */
-  if (!shouldReact(RANDOM_LEVEL)) return;
-
-  if (!message.message_id) return;
-
-  const emojis = EMOJI_LIST;
-  if (!emojis || emojis.length === 0) return;
-
-  const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-
+tgBot.on("message", async (msg) => {
   try {
-    await bot.setMessageReaction(chatId, message.message_id, emoji);
-  } catch (err) {
-    console.error("Reaction failed:", err?.message || err);
+    await onUpdate(
+      { message: msg },      // data
+      botApi,                // botApi instance
+      EMOJI_LIST,            // Reactions
+      RESTRICTED_CHATS,      // Restricted chats
+      BOT_USERNAME,          // Bot username
+      RANDOM_LEVEL           // Random level
+    );
+  } catch (e) {
+    console.error("Update error:", e);
   }
-}
+});
