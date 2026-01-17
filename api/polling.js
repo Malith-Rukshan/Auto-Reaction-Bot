@@ -1,5 +1,5 @@
 import TelegramBot from "node-telegram-bot-api";
-import { onUpdate } from "./onUpdate.js";
+import handleUpdate from "./bot-handler.js";
 
 const token = process.env.BOT_TOKEN;
 
@@ -13,9 +13,14 @@ console.log("Telegram bot polling started");
 
 bot.on("message", async (msg) => {
   try {
-    await onUpdate(
-      { message: msg },
-      { BOT_TOKEN: token }
+    await handleUpdate(
+      {
+        update_id: Date.now(),
+        message: msg
+      },
+      {
+        BOT_TOKEN: token
+      }
     );
   } catch (err) {
     console.error("Update error:", err);
