@@ -1,19 +1,17 @@
 {
   "name": "auto-reaction-bot",
-  "version": "1.1.0",
-  "description": "A Telegram Bot that automatically reacts to posts in Telegram Channels, groups, and private messages, developed as a serverless application.",
-  "main": "api/index.js",
+  "version": "1.0.0",
   "type": "module",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node api/index.js",
-    "vercel": "vercel dev",
-    "cloudflare": "wrangler dev"
-  },
-  "dependencies": {
-    "dotenv": "^17.2.3",
-    "express": "^4.22.1"
+    "start": "node api/index.js"
   },
   "engines": {
-    "node": ">=22.x"
+    "node": "20.x"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "dotenv": "^17.2.3",
+    "node-telegram-bot-api": "^0.66.0"
   }
 }
