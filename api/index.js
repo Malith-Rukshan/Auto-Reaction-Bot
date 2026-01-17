@@ -2,7 +2,7 @@
  * © [2025] Malith-Rukshan. All rights reserved.
  * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
  */
-
+import "./polling.js";
 import express from 'express';
 import dotenv from 'dotenv';
 import TelegramBotAPI from './TelegramBotAPI.js';
