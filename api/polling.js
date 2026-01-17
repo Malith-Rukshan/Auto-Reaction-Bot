@@ -1,7 +1,7 @@
 import TelegramBot from "node-telegram-bot-api";
 import { onUpdate } from "./bot-handler.js";
 import TelegramBotAPI from "./TelegramBotAPI.js";
-import CONSTANTS from "./constants.js";
+import * as CONSTANTS from "./constants.js";
 
 const { EMOJI_LIST, RESTRICTED_CHATS, RANDOM_LEVEL } = CONSTANTS;
 
