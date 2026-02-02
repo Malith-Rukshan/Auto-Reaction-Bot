@@ -6,6 +6,7 @@ export function getRandomPositiveReaction(reaction) {
 
 // Get Emoji Array from String emoji set
 export function splitEmojis(emojiString) {
+    if (!emojiString) return [];
     const emojiRegex = /(\p{Emoji_Presentation}|\p{Extended_Pictographic}|\p{Emoji_Modifier_Base})/gu;
     return emojiString.match(emojiRegex) || [];
 }
