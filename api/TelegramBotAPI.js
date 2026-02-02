@@ -24,8 +24,22 @@ export default class TelegramBotAPI {
             const data = await response.json();
 
             if (!response.ok) {
-                // Log error without exposing sensitive data (tokens, etc.)
+                // Log error with action and relevant request details
                 console.error(`Telegram API request failed: ${action} (Status: ${response.status})`);
+
+                // Log only relevant fields based on action
+                if (action === 'setMessageReaction') {
+                    console.error(`Chat ID: ${body.chat_id}, Message ID: ${body.message_id}, Reaction: ${body.reaction?.[0]?.emoji}`);
+                } else if (action === 'sendMessage') {
+                    console.error(`Chat ID: ${body.chat_id}, Text: ${body.text?.substring(0, 50)}...`);
+                } else if (action === 'sendInvoice') {
+                    console.error(`Chat ID: ${body.chat_id}, Title: ${body.title}`);
+                } else if (action === 'answerPreCheckoutQuery') {
+                    console.error(`Pre-checkout Query ID: ${body.pre_checkout_query_id}, OK: ${body.ok}`);
+                } else {
+                    console.error(`Chat ID: ${body.chat_id || 'N/A'}`);
+                }
+
                 if (data.description) {
                     console.error(`Error description: ${data.description}`);
                 }
@@ -39,12 +53,23 @@ export default class TelegramBotAPI {
             return data;
 
         } catch (error) {
-            // Log network/timeout errors without sensitive data
+            // Log network/timeout errors with action and relevant details
             if (error.name === 'AbortError') {
-                console.error(`Request timeout for ${action}`);
+                console.error(`Request timeout for action: ${action}`);
+                if (action === 'setMessageReaction') {
+                    console.error(`Chat ID: ${body.chat_id}, Message ID: ${body.message_id}, Reaction: ${body.reaction?.[0]?.emoji}`);
+                } else if (body.chat_id) {
+                    console.error(`Chat ID: ${body.chat_id}`);
+                }
                 throw new Error(`Telegram API timeout: ${action}`);
             } else if (!error.message.includes('Telegram API error')) {
-                console.error(`Network error for ${action}: ${error.message}`);
+                console.error(`Network error for action: ${action}`);
+                if (action === 'setMessageReaction') {
+                    console.error(`Chat ID: ${body.chat_id}, Message ID: ${body.message_id}, Reaction: ${body.reaction?.[0]?.emoji}`);
+                } else if (body.chat_id) {
+                    console.error(`Chat ID: ${body.chat_id}`);
+                }
+                console.error(`Error message: ${error.message}`);
                 throw new Error(`Network error: ${action}`);
             }
 
