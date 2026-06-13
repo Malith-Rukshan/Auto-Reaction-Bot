@@ -19,5 +19,7 @@ services:
         value: "3000"
       - key: NODE_ENV
         value: production
+      - key: LOG_LEVEL
+        value: info
     healthCheckPath: /
     autoDeploy: false

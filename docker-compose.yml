@@ -13,6 +13,7 @@ services:
       - RESTRICTED_CHATS=${RESTRICTED_CHATS}
       - PORT=${PORT:-3000}
       - NODE_ENV=${NODE_ENV:-production}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
     env_file:
       - .env
     healthcheck:

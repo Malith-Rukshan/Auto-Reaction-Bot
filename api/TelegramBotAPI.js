@@ -5,6 +5,8 @@
  * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
  */
 
+import { logger } from './logger.js';
+
 export default class TelegramBotAPI {
     constructor(botToken) {
         this.apiUrl = `https://api.telegram.org/bot${botToken}/`;
@@ -24,27 +26,25 @@ export default class TelegramBotAPI {
             const data = await response.json();
 
             if (!response.ok) {
-                // Log error with action and relevant request details
-                console.error(`Telegram API request failed: ${action} (Status: ${response.status})`);
+                // One concise summary line at warn level; the bot recovers from
+                // these gracefully, so the per-request details go to debug.
+                logger.warn(`Telegram API request failed: ${action} (Status: ${response.status})${data.description ? ' - ' + data.description : ''}`);
 
                 // Log only relevant fields based on action
                 if (action === 'setMessageReaction') {
-                    console.error(`Chat ID: ${body.chat_id}, Message ID: ${body.message_id}, Reaction: ${body.reaction?.[0]?.emoji}`);
+                    logger.debug(`Chat ID: ${body.chat_id}, Message ID: ${body.message_id}, Reaction: ${body.reaction?.[0]?.emoji}`);
                 } else if (action === 'sendMessage') {
-                    console.error(`Chat ID: ${body.chat_id}, Text: ${body.text?.substring(0, 50)}...`);
+                    logger.debug(`Chat ID: ${body.chat_id}, Text: ${body.text?.substring(0, 50)}...`);
                 } else if (action === 'sendInvoice') {
-                    console.error(`Chat ID: ${body.chat_id}, Title: ${body.title}`);
+                    logger.debug(`Chat ID: ${body.chat_id}, Title: ${body.title}`);
                 } else if (action === 'answerPreCheckoutQuery') {
-                    console.error(`Pre-checkout Query ID: ${body.pre_checkout_query_id}, OK: ${body.ok}`);
+                    logger.debug(`Pre-checkout Query ID: ${body.pre_checkout_query_id}, OK: ${body.ok}`);
                 } else {
-                    console.error(`Chat ID: ${body.chat_id || 'N/A'}`);
+                    logger.debug(`Chat ID: ${body.chat_id || 'N/A'}`);
                 }
 
-                if (data.description) {
-                    console.error(`Error description: ${data.description}`);
-                }
                 if (data.error_code) {
-                    console.error(`Error code: ${data.error_code}`);
+                    logger.debug(`Error code: ${data.error_code}`);
                 }
 
                 throw new Error(`Telegram API error: ${data.description || 'Unknown error'}`);
@@ -55,21 +55,20 @@ export default class TelegramBotAPI {
         } catch (error) {
             // Log network/timeout errors with action and relevant details
             if (error.name === 'AbortError') {
-                console.error(`Request timeout for action: ${action}`);
+                logger.warn(`Request timeout for action: ${action}`);
                 if (action === 'setMessageReaction') {
-                    console.error(`Chat ID: ${body.chat_id}, Message ID: ${body.message_id}, Reaction: ${body.reaction?.[0]?.emoji}`);
+                    logger.debug(`Chat ID: ${body.chat_id}, Message ID: ${body.message_id}, Reaction: ${body.reaction?.[0]?.emoji}`);
                 } else if (body.chat_id) {
-                    console.error(`Chat ID: ${body.chat_id}`);
+                    logger.debug(`Chat ID: ${body.chat_id}`);
                 }
                 throw new Error(`Telegram API timeout: ${action}`);
             } else if (!error.message.includes('Telegram API error')) {
-                console.error(`Network error for action: ${action}`);
+                logger.warn(`Network error for action: ${action} - ${error.message}`);
                 if (action === 'setMessageReaction') {
-                    console.error(`Chat ID: ${body.chat_id}, Message ID: ${body.message_id}, Reaction: ${body.reaction?.[0]?.emoji}`);
+                    logger.debug(`Chat ID: ${body.chat_id}, Message ID: ${body.message_id}, Reaction: ${body.reaction?.[0]?.emoji}`);
                 } else if (body.chat_id) {
-                    console.error(`Chat ID: ${body.chat_id}`);
+                    logger.debug(`Chat ID: ${body.chat_id}`);
                 }
-                console.error(`Error message: ${error.message}`);
                 throw new Error(`Network error: ${action}`);
             }
 

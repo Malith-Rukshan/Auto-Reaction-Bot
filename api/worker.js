@@ -7,6 +7,7 @@ import TelegramBotAPI from "./TelegramBotAPI.js";
 import { htmlContent } from './constants.js';
 import { splitEmojis, returnHTML, getChatIds } from "./helper.js";
 import { onUpdate } from './bot-handler.js';
+import { logger, setLogLevel } from './logger.js';
 
 // Cache for parsed environment variables to avoid repeated parsing
 let configCache = null;
@@ -14,6 +15,8 @@ let configCache = null;
 function getConfig(env) {
     // Parse environment variables once and cache them
     if (!configCache || configCache.env !== env) {
+        // Workers have no process.env, so apply the level from the request env.
+        setLogLevel(env.LOG_LEVEL);
         configCache = {
             env: env,
             botToken: env.BOT_TOKEN,
@@ -58,7 +61,7 @@ export default {
                     config.randomLevel
                 )
             } catch (error) {
-                console.error('Error in onUpdate:', error.message)
+                logger.error('Error in onUpdate:', error.message)
             }
         } else {
             return new returnHTML(htmlContent)

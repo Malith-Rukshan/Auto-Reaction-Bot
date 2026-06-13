@@ -23,6 +23,11 @@
         "description": "Port to run the app on",
         "required": false,
         "value": "3000"
+      },
+      "LOG_LEVEL": {
+        "description": "Logging verbosity: silent, error, warn, info, or debug (Optional)",
+        "required": false,
+        "value": "info"
       }
     },
     "scripts": {

@@ -9,6 +9,7 @@ import TelegramBotAPI from './TelegramBotAPI.js';
 import { htmlContent } from './constants.js';
 import { splitEmojis, getChatIds } from './helper.js';
 import { onUpdate } from './bot-handler.js';
+import { logger } from './logger.js';
 
 dotenv.config();
 
@@ -29,7 +30,7 @@ app.post('/', async (req, res) => {
         await onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, RandomLevel);
         res.status(200).send('Ok');
     } catch (error) {
-        console.error('Error in onUpdate:', error.message);
+        logger.error('Error in onUpdate:', error.message);
         res.status(200).send('Ok');
     }
 });
@@ -50,5 +51,5 @@ app.get('/health', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    logger.info(`Server is running on port ${PORT}`);
 });

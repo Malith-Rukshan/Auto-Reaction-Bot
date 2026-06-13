@@ -92,6 +92,7 @@ To ensure that your Telegram Auto-Reaction Bot operates correctly, you will need
 - `EMOJI_LIST`: A string of emojis that the bot will use to react to messages. You can customize this list to include any emojis you prefer, such as 👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆.
 - `RANDOM_LEVEL`: An integer that determines the randomness of reactions in **group chats**. Lower values result in more predictable reactions, while higher values increase randomness. Default is `0`, meaning reactions are consistent by default.
 - `RESTRICTED_CHATS`: A list of chat IDs where the bot should not react to messages (Optional). Split each chat ID by " , ". Example : `-1001233434,3434234`
+- `LOG_LEVEL`: Controls how much the bot logs (Optional). One of `silent`, `error`, `warn`, `info`, or `debug` — from quiet to verbose. Default is `info`. If you're seeing too many logs, set it to `warn` or `error`; use `debug` to see full per-request details when troubleshooting.
 
 ## 🧩 Configure the Webhook
 Open your web browser and enter the following URL (replace <YourBotToken> with your actual bot token and https://your.cloudflare.worker.url/ with your Cloudflare Worker URL):
