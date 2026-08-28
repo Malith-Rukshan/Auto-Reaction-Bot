@@ -50,7 +50,7 @@ Set All Environmental variables before deploy. -  [Instructions](#-configuring-e
 ### ✅ Serverless - Free
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Malith-Rukshan/Auto-Reaction-Bot)
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Malith-Rukshan/Auto-Reaction-Bot)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://t.me/KyawGyi042-Bot)
 
 </br>
 
@@ -60,7 +60,7 @@ Deploying this Telegram Auto-Reaction Bot on Cloudflare is straightforward thank
 
 1. **Start the Deployment**:
     - Click the "Deploy to Cloudflare Workers" button below.
-    - [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Malith-Rukshan/Auto-Reaction-Bot)
+    - [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Malith-Rukshan/Khant-Reaction-Bot)
     
 2. **Set up your Cloudflare account**:
     - If you do not already have a Cloudflare account, you will be prompted to create one.
@@ -74,7 +74,7 @@ Deploying this Telegram Auto-Reaction Bot on Cloudflare is straightforward thank
 
 <details><summary>Cloudflare Worker Settings</summary><img align="center" src="https://raw.githubusercontent.com/Malith-Rukshan/Auto-Reaction-Bot/main/images/cloudflare-settings.png"/></details>
 
-✅ **Demo**: Experience the Auto Reaction Bot in demo: [Auto Reaction Bot ✨](https://t.me/Auto_ReactionBOT).
+✅ **Demo**: Experience the Auto Reaction Bot in demo: [Khant Reaction Bot ✨](https://t.me/Khant_ReactionBOT).
 
 ## 🚀 Deploy with Github Actions
 First you must Add Repository secrets as follows
@@ -89,7 +89,7 @@ To ensure that your Telegram Auto-Reaction Bot operates correctly, you will need
 
 - `BOT_TOKEN`: This is your bot's token, which you can generate from [BotFather](https://t.me/BotFather). This token allows your bot to authenticate and interact with the Telegram API.
 - `BOT_USERNAME`: The username you have set for your bot. This is used within the script to identify messages intended for your bot.
-- `EMOJI_LIST`: A string of emojis that the bot will use to react to messages. You can customize this list to include any emojis you prefer, such as 👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆.
+- `EMOJI_LIST`: A string of emojis that the bot will use to react to messages. You can customize this list to include any emojis you prefer, such as 👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆❣️💪🙋📍📌.
 - `RANDOM_LEVEL`: An integer that determines the randomness of reactions in **group chats**. Lower values result in more predictable reactions, while higher values increase randomness. Default is `0`, meaning reactions are consistent by default.
 - `RESTRICTED_CHATS`: A list of chat IDs where the bot should not react to messages (Optional). Split each chat ID by " , ". Example : `-1001233434,3434234`
 - `LOG_LEVEL`: Controls how much the bot logs (Optional). One of `silent`, `error`, `warn`, `info`, or `debug` — from quiet to verbose. Default is `info`. If you're seeing too many logs, set it to `warn` or `error`; use `debug` to see full per-request details when troubleshooting.
