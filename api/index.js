@@ -11,7 +11,7 @@ import { splitEmojis, getChatIds } from './helper.js';
 import { onUpdate } from './bot-handler.js';
 import { logger } from './logger.js';
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const app = express();
 app.use(express.json());
@@ -21,10 +21,18 @@ const botUsername = process.env.BOT_USERNAME;
 const Reactions = splitEmojis(process.env.EMOJI_LIST);
 const RestrictedChats = getChatIds(process.env.RESTRICTED_CHATS);
 const RandomLevel = parseInt(process.env.RANDOM_LEVEL || '0', 10);
+const webhookSecret = process.env.WEBHOOK_SECRET;
 
 const botApi = new TelegramBotAPI(botToken);
 
 app.post('/', async (req, res) => {
+    // Reject requests that don't carry the secret_token set via setWebhook
+    // https://core.telegram.org/bots/api#setwebhook
+    if (webhookSecret && req.get('X-Telegram-Bot-Api-Secret-Token') !== webhookSecret) {
+        logger.warn('Rejected webhook request with invalid secret token');
+        return res.status(401).send('Unauthorized');
+    }
+
     const data = req.body;
     try {
         await onUpdate(data, botApi, Reactions, RestrictedChats, botUsername, RandomLevel);

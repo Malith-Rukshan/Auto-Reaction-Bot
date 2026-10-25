@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Deploy
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -21,9 +21,11 @@ jobs:
             EMOJI_LIST
             RANDOM_LEVEL
             RESTRICTED_CHATS
+            WEBHOOK_SECRET
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           BOT_USERNAME: ${{ secrets.BOT_USERNAME }}
           EMOJI_LIST: ${{ secrets.EMOJI_LIST }}
           RANDOM_LEVEL: ${{ secrets.RANDOM_LEVEL }}
           RESTRICTED_CHATS: ${{ secrets.RESTRICTED_CHATS }}
+          WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}

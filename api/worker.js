@@ -24,6 +24,7 @@ function getConfig(env) {
             reactions: splitEmojis(env.EMOJI_LIST),
             restrictedChats: getChatIds(env.RESTRICTED_CHATS),
             randomLevel: parseInt(env.RANDOM_LEVEL || '0', 10),
+            webhookSecret: env.WEBHOOK_SECRET,
             botApi: new TelegramBotAPI(env.BOT_TOKEN)
         };
     }
@@ -50,8 +51,15 @@ export default {
         }
 
         if (request.method === 'POST') {
-            const data = await request.json()
+            // Reject requests that don't carry the secret_token set via setWebhook
+            // https://core.telegram.org/bots/api#setwebhook
+            if (config.webhookSecret && request.headers.get('X-Telegram-Bot-Api-Secret-Token') !== config.webhookSecret) {
+                logger.warn('Rejected webhook request with invalid secret token')
+                return new Response('Unauthorized', { status: 401 })
+            }
+
             try {
+                const data = await request.json()
                 await onUpdate(
                     data,
                     config.botApi,
@@ -64,7 +72,7 @@ export default {
                 logger.error('Error in onUpdate:', error.message)
             }
         } else {
-            return new returnHTML(htmlContent)
+            return returnHTML(htmlContent)
         }
 
         // Return HTTP 200.OK to Telegram

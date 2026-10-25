@@ -33,7 +33,8 @@
 - Efficient Real-Time Processing ✓
 - Serverless Architecture ✓
 - Supports for Groups & Channels ✓
-- Compliance with Telegram API Updates ✓
+- Compliance with Telegram API Updates (Bot API 10.3) ✓
+- Webhook Secret Token Verification ✓
 - Lightweight Code - Easy Setup ✓
 - More Comming Soon...
 
@@ -89,9 +90,10 @@ To ensure that your Telegram Auto-Reaction Bot operates correctly, you will need
 
 - `BOT_TOKEN`: This is your bot's token, which you can generate from [BotFather](https://t.me/BotFather). This token allows your bot to authenticate and interact with the Telegram API.
 - `BOT_USERNAME`: The username you have set for your bot. This is used within the script to identify messages intended for your bot.
-- `EMOJI_LIST`: A string of emojis that the bot will use to react to messages. You can customize this list to include any emojis you prefer, such as 👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆.
+- `EMOJI_LIST`: A string of emojis that the bot will use to react to messages. You can customize this list to include any emojis you prefer, such as 👍❤🔥🥰👏😁🎉🤩🙏👌🕊😍🐳❤‍🔥💯⚡🏆. Only emojis from Telegram's [supported reactions](https://core.telegram.org/bots/api#reactiontypeemoji) list work; the bot logs a warning for any others.
 - `RANDOM_LEVEL`: An integer that determines the randomness of reactions in **group chats**. Lower values result in more predictable reactions, while higher values increase randomness. Default is `0`, meaning reactions are consistent by default.
 - `RESTRICTED_CHATS`: A list of chat IDs where the bot should not react to messages (Optional). Split each chat ID by " , ". Example : `-1001233434,3434234`
+- `WEBHOOK_SECRET`: A secret token that verifies webhook requests really come from Telegram (Optional, recommended). Use only `A-Z`, `a-z`, `0-9`, `_` and `-` (1-256 characters), and pass the same value as `secret_token` when you [configure the webhook](#-configure-the-webhook). Requests without the matching `X-Telegram-Bot-Api-Secret-Token` header are rejected.
 - `LOG_LEVEL`: Controls how much the bot logs (Optional). One of `silent`, `error`, `warn`, `info`, or `debug` — from quiet to verbose. Default is `info`. If you're seeing too many logs, set it to `warn` or `error`; use `debug` to see full per-request details when troubleshooting.
 
 ## 🧩 Configure the Webhook
@@ -99,7 +101,16 @@ Open your web browser and enter the following URL (replace <YourBotToken> with y
     <br>
     
 ```
-https://api.telegram.org/bot<YourBotToken>/setWebhook?url=https://your.cloudflare.worker.url/
+https://api.telegram.org/bot<YourBotToken>/setWebhook?url=https://your.cloudflare.worker.url/&allowed_updates=["message","channel_post","pre_checkout_query"]
+```
+
+`allowed_updates` limits the webhook to the updates the bot actually uses, so your worker isn't invoked for anything else.
+
+If you set `WEBHOOK_SECRET`, add it as `secret_token`:
+    <br>
+
+```
+https://api.telegram.org/bot<YourBotToken>/setWebhook?url=https://your.cloudflare.worker.url/&allowed_updates=["message","channel_post","pre_checkout_query"]&secret_token=<YourWebhookSecret>
 ```
 
 **Verify the Webhook Configuration**:
@@ -115,7 +126,7 @@ https://api.telegram.org/bot<YourBotToken>/getWebhookInfo
 If you prefer to manually deploy the Auto Reaction Bot using Cloudflare Wrangler, follow these detailed steps to get started:
 
 ### Prerequisites
-Before you begin, you will need to have git installed on your local machine to clone the repository.
+Before you begin, you will need to have git and [Node.js](https://nodejs.org/) 22 or later (24 LTS recommended) installed on your local machine.
 
 ### Step 1: Clone the Repository
 Start by cloning the repository to your local machine. Open your terminal and run the following command:
@@ -128,12 +139,12 @@ cd Auto-Reaction-Bot
 Edit the `wrangler.toml` file in your project directory to include your environment variables (like `example.wrangler.toml`). You will need to replace the placeholder values with your actual data : [🛠 Configuring Environments](#-configuring-environments)
 
 ### Step 3: Install Cloudflare Wrangler
-To deploy using Cloudflare Wrangler, you must first install it. You can find the installation instructions and more information on the [official Cloudflare Wrangler documentation](https://developers.cloudflare.com/workers/wrangler/install-and-update/).
+To deploy using Cloudflare Wrangler (v4), you must first install it, or run it directly with `npx wrangler`. You can find the installation instructions and more information on the [official Cloudflare Wrangler documentation](https://developers.cloudflare.com/workers/wrangler/install-and-update/).
 
 ### Step 4: Deploy Using Wrangler
 Once Wrangler is installed and you've configured your wrangler.toml file, deploy your project to Cloudflare Workers by running the following command in your terminal:
 ```shell
-wrangler publish
+npx wrangler deploy
 ```
 This command will deploy your bot to Cloudflare Workers, now you must [Configure the Webhook](#-configure-the-webhook). After All it will start reacting to messages in Telegram chats as configured.
 

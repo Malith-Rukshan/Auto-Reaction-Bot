@@ -13,7 +13,11 @@ services:
         sync: false
       - key: EMOJI_LIST
         sync: false
+      - key: RANDOM_LEVEL
+        value: "0"
       - key: RESTRICTED_CHATS
+        sync: false
+      - key: WEBHOOK_SECRET
         sync: false
       - key: PORT
         value: "3000"
@@ -21,5 +25,5 @@ services:
         value: production
       - key: LOG_LEVEL
         value: info
-    healthCheckPath: /
+    healthCheckPath: /health
     autoDeploy: false

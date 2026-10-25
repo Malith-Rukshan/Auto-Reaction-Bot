@@ -11,6 +11,7 @@ services:
       - EMOJI_LIST=${EMOJI_LIST}
       - RANDOM_LEVEL=${RANDOM_LEVEL:-0}
       - RESTRICTED_CHATS=${RESTRICTED_CHATS}
+      - WEBHOOK_SECRET=${WEBHOOK_SECRET}
       - PORT=${PORT:-3000}
       - NODE_ENV=${NODE_ENV:-production}
       - LOG_LEVEL=${LOG_LEVEL:-info}
