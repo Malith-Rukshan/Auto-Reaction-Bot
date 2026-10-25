@@ -15,6 +15,16 @@ Let's elevate our conversations with more energy and color! 🚀
 
 export const donateMessage = `🙏 Support Auto Reaction Bot ✨ and help us stay online and continue to improve! ✨ Your donations keep our services live and enable us to bring you new features and enhancements. Every star makes a difference! Thank you! 🌟🚀`
 
+// Emoji reactions bots are allowed to set (Bot API 10.3)
+// https://core.telegram.org/bots/api#reactiontypeemoji
+export const allowedReactions = [
+    "❤", "👍", "👎", "🔥", "🥰", "👏", "😁", "🤔", "🤯", "😱", "🤬", "😢", "🎉", "🤩", "🤮", "💩",
+    "🙏", "👌", "🕊", "🤡", "🥱", "🥴", "😍", "🐳", "❤‍🔥", "🌚", "🌭", "💯", "🤣", "⚡", "🍌", "🏆",
+    "💔", "🤨", "😐", "🍓", "🍾", "💋", "🖕", "😈", "😴", "😭", "🤓", "👻", "👨‍💻", "👀", "🎃", "🙈",
+    "😇", "😨", "🤝", "✍", "🤗", "🫡", "🎅", "🎄", "☃", "💅", "🤪", "🗿", "🆒", "💘", "🙉", "🦄",
+    "😘", "💊", "🙊", "😎", "👾", "🤷‍♂", "🤷", "🤷‍♀", "😡"
+];
+
 export const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">

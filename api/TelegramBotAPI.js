@@ -2,6 +2,8 @@
  * Telegram API for:
  *      - sendMessage
  *      - setMessageReaction
+ *      - sendInvoice
+ *      - answerPreCheckoutQuery
  * Repository: https://github.com/Malith-Rukshan/Auto-Reaction-Bot
  */
 
@@ -104,7 +106,7 @@ export default class TelegramBotAPI {
             chat_id: chatId,
             text: text,
             parse_mode: "Markdown",
-            disable_web_page_preview:true,
+            link_preview_options: { is_disabled: true },
             ...(inlineKeyboard && { reply_markup: { inline_keyboard: inlineKeyboard } })
         });
     } 
@@ -115,18 +117,17 @@ export default class TelegramBotAPI {
      * @param {string} params.title - Product name
      * @param {string} params.description - Product description
      * @param {string} params.payload - Bot-defined invoice payload
-     * @param {string} params.providerToken - Payments provider token
      * @param {string} params.startParameter - Unique deep-linking parameter
-     * @param {string} params.currency - Three-letter ISO 4217 currency code
+     * @param {string} params.currency - Three-letter ISO 4217 currency code ("XTR" for Telegram Stars)
      * @param {Array} params.prices - Price breakdown (e.g., [{label: 'Product', amount: 1000}])
+     * provider_token is omitted as it isn't needed for payments in Telegram Stars.
      */
-    async sendInvoice(chatId, title, description, payload, providerToken, startParameter, currency, prices) {
+    async sendInvoice(chatId, title, description, payload, startParameter, currency, prices) {
         await this.callApi('sendInvoice', {
             chat_id: chatId,
             title: title,
             description: description,
             payload: payload,
-            provider_token: providerToken,
             start_parameter: startParameter,
             currency: currency,
             prices: prices

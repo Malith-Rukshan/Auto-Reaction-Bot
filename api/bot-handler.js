@@ -26,7 +26,14 @@ export async function onUpdate(data, botApi, Reactions, RestrictedChats, botUser
         message_id = content.message_id;
         text = content.text;
 
-        if (data.message && (text === '/start' || text === '/start@' + botUsername)) {
+        // Normalize commands addressed to this bot, e.g. "/reactions@BotName" -> "/reactions"
+        if (text && botUsername) {
+            text = text.replace(new RegExp(`^(/\\w+)@${botUsername}\\b`, 'i'), '$1');
+        }
+
+        if (data.message && content.successful_payment) {
+            await botApi.sendMessage(chatId, "Thank you for your donation! 💝");
+        } else if (data.message && text === '/start') {
             await botApi.sendMessage(chatId, startMessage.replace('UserName', content.chat.type === "private" ? content.from.first_name : content.chat.title), [
                 [
                     { "text": "➕ Add to Channel ➕", "url": `https://t.me/${botUsername}?startchannel=botstart` },
@@ -48,7 +55,6 @@ export async function onUpdate(data, botApi, Reactions, RestrictedChats, botUser
                 "Donate to Auto Reaction Bot ✨",
                 donateMessage,
                 '{}',
-                '',
                 'donate',
                 'XTR',
                 [{ label: 'Pay ⭐️5', amount: 5 }],
@@ -56,7 +62,7 @@ export async function onUpdate(data, botApi, Reactions, RestrictedChats, botUser
         } else {
             // Calculate the threshold: higher RandomLevel, lower threshold
             let threshold = 1 - (RandomLevel / 10);
-            if (!RestrictedChats.includes(chatId)) {
+            if (Reactions.length && !RestrictedChats.includes(chatId)) {
                 // Check if chat is a group or supergroup to determine if reactions should be random
                 if (["group", "supergroup"].includes(content.chat.type)) {
                     // Run Function Randomly - According to the RANDOM_LEVEL
@@ -70,7 +76,7 @@ export async function onUpdate(data, botApi, Reactions, RestrictedChats, botUser
             }
         }
     } else if (data.pre_checkout_query) {
+        // Thank-you message is sent once the payment completes (successful_payment above)
         await botApi.answerPreCheckoutQuery(data.pre_checkout_query.id, true);
-        await botApi.sendMessage(data.pre_checkout_query.from.id, "Thank you for your donation! 💝");
     }
 }
