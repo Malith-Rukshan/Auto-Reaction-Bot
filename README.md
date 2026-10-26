@@ -48,6 +48,26 @@ Set All Environmental variables before deploy. -  [Instructions](#-configuring-e
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/xAf8hY?referralCode=jC4ZQ_)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
+### 🚀 Gagarin Cloud
+
+[Gagarin Cloud](https://gagarin.cloud) has no deploy button: the [`gg` CLI](https://github.com/gagarin-cloud/gg) builds the repo's `Dockerfile`, runs `api/index.js` and gives it a public address. Install `gg`, run `gg login`, then from a clone of this repo:
+
+```shell
+gg init auto-reaction-bot
+
+# Bot credentials, handed to the service as BOT_TOKEN and BOT_USERNAME
+printf 'TOKEN=<your-bot-token>\nUSERNAME=<your-bot-username>\n' > .env.bot
+gg resource add auto-reaction-bot/bot external --env-file .env.bot && rm .env.bot
+
+# Build the Dockerfile and run it on port 3000 (add RANDOM_LEVEL etc. as more --env flags)
+gg ship auto-reaction-bot/web:3000 --deps bot --env 'EMOJI_LIST=👍❤🔥🥰👏😁🎉🤩🙏'
+
+gg domain add auto-reaction-bot/web   # public https:// address
+gg status auto-reaction-bot           # prints it, and when the bot is running
+```
+
+Then [configure the webhook](#-configure-the-webhook) with that address. To use `WEBHOOK_SECRET`, add it the same way as the bot credentials: an external named `webhook` holding `SECRET=<your-webhook-secret>`, then `gg deps add auto-reaction-bot/web webhook`.
+
 ### ✅ Serverless - Free
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Malith-Rukshan/Auto-Reaction-Bot)
